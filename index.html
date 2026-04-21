@@ -4,49 +4,53 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>🇨🇷 Cuestionario de Estudios Sociales para Isma - 4to Año</title>
+<title>🇨🇷 Cuestionario de Estudios Sociales - 4to Año</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --azul:#0094D9;
-    --azul-oscuro:#005A8A;
-    --rojo:#E63946;
-    --amarillo:#FFD23F;
-    --verde:#43AA8B;
-    --verde-claro:#A8E6CF;
-    --crema:#FFF8E7;
-    --rosa:#FF8FA3;
-    --morado:#9B5DE5;
-    --naranja:#FF9F1C;
-    --texto:#2B2D42;
-    --sombra: 0 6px 0 rgba(0,0,0,.12);
+    --azul:#1976D2;
+    --azul-oscuro:#0D47A1;
+    --azul-fuerte:#003D80;
+    --rojo:#D32F2F;
+    --rojo-oscuro:#8B0000;
+    --amarillo:#FFC107;
+    --amarillo-oscuro:#FF8F00;
+    --verde:#2E7D32;
+    --verde-claro:#81C784;
+    --crema:#FFFBF0;
+    --rosa:#EC407A;
+    --morado:#7B1FA2;
+    --naranja:#F57C00;
+    --texto:#1A1A2E;
+    --texto-suave:#3D3D5C;
+    --sombra: 0 6px 0 rgba(0,0,0,.15);
   }
 
 *{box-sizing:border-box; margin:0; padding:0;}
 
 body{
-font-family:‘Fredoka’, sans-serif;
+font-family:‘Nunito’, ‘Trebuchet MS’, Verdana, sans-serif;
 background:
-radial-gradient(circle at 10% 20%, rgba(255,210,63,.25) 0%, transparent 40%),
-radial-gradient(circle at 90% 80%, rgba(155,93,229,.2) 0%, transparent 40%),
-radial-gradient(circle at 50% 50%, rgba(67,170,139,.15) 0%, transparent 50%),
-linear-gradient(180deg, #FFF8E7 0%, #FFE5D9 100%);
+radial-gradient(circle at 10% 20%, rgba(255,193,7,.2) 0%, transparent 40%),
+radial-gradient(circle at 90% 80%, rgba(123,31,162,.15) 0%, transparent 40%),
+radial-gradient(circle at 50% 50%, rgba(46,125,50,.12) 0%, transparent 50%),
+linear-gradient(180deg, #FFF8E1 0%, #FFE0B2 100%);
 min-height:100vh;
 color:var(–texto);
 padding:20px 15px 60px;
 background-attachment: fixed;
+font-weight:600;
 }
 
-/* Patrón decorativo de fondo */
 body::before{
 content:””;
 position:fixed;
 inset:0;
 background-image:
-radial-gradient(circle at 20px 20px, rgba(0,148,217,.08) 2px, transparent 2px),
-radial-gradient(circle at 60px 60px, rgba(230,57,70,.08) 2px, transparent 2px);
+radial-gradient(circle at 20px 20px, rgba(25,118,210,.1) 2px, transparent 2px),
+radial-gradient(circle at 60px 60px, rgba(211,47,47,.1) 2px, transparent 2px);
 background-size: 80px 80px;
 pointer-events:none;
 z-index:0;
@@ -62,109 +66,130 @@ z-index:1;
 /* ===== HEADER ===== */
 header{
 text-align:center;
-background: linear-gradient(135deg, var(–azul) 0%, var(–verde) 100%);
+background: linear-gradient(135deg, #003D80 0%, #1B5E20 100%);
 padding: 35px 25px 30px;
 border-radius: 30px;
-box-shadow: 0 10px 0 rgba(0,90,138,.3), 0 15px 40px rgba(0,0,0,.15);
+box-shadow: 0 10px 0 rgba(0,61,128,.4), 0 15px 40px rgba(0,0,0,.2);
 margin-bottom:30px;
 position:relative;
 overflow:hidden;
-border: 4px solid white;
+border: 5px solid white;
 }
 header::before{
 content:“⭐”;
 position:absolute;
 top:15px; left:20px;
-font-size:30px;
+font-size:32px;
 animation: girar 8s linear infinite;
 }
 header::after{
 content:“🌟”;
 position:absolute;
 bottom:15px; right:20px;
-font-size:30px;
+font-size:32px;
 animation: girar 6s linear infinite reverse;
 }
 @keyframes girar { to { transform: rotate(360deg); } }
 
 header h1{
-font-family:‘Bubblegum Sans’, cursive;
-font-size: clamp(28px, 6vw, 44px);
-color:white;
-text-shadow: 3px 3px 0 var(–azul-oscuro), 5px 5px 0 rgba(0,0,0,.2);
-line-height:1.1;
-margin-bottom:10px;
+font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
+font-size: clamp(26px, 6vw, 42px);
+color:#FFFFFF;
+text-shadow:
+2px 2px 0 #8B0000,
+4px 4px 0 rgba(0,0,0,.4);
+line-height:1.2;
+margin-bottom:14px;
+font-weight:800;
+letter-spacing: .5px;
 }
 header .sub{
-color:white;
-font-size:18px;
-font-weight:500;
-background: rgba(255,255,255,.2);
+color:#FFFFFF;
+font-size:17px;
+font-weight:800;
+background: rgba(0,0,0,.45);
 display:inline-block;
-padding: 6px 18px;
+padding: 8px 22px;
 border-radius: 20px;
-backdrop-filter: blur(4px);
+border: 2px solid rgba(255,255,255,.6);
+letter-spacing: .5px;
 }
 
 /* ===== INTRO PANEL ===== */
 .intro{
 background:white;
 border-radius:25px;
-padding:25px;
+padding:25px 22px;
 margin-bottom:25px;
 box-shadow: var(–sombra);
-border: 3px dashed var(–amarillo);
+border: 4px dashed var(–amarillo-oscuro);
 text-align:center;
 }
 .intro h2{
 color:var(–rojo);
-font-family:‘Bubblegum Sans’, cursive;
+font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
 font-size:26px;
-margin-bottom:10px;
+margin-bottom:14px;
+font-weight:800;
 }
 .intro p{
 font-size:17px;
 line-height:1.5;
-margin-bottom:8px;
+margin-bottom:10px;
+color: var(–texto);
+font-weight:600;
+}
+.intro p strong{
+color: var(–azul-oscuro);
+font-weight:800;
 }
 .intro .temas{
 display:flex;
 flex-wrap:wrap;
-gap:8px;
+gap:10px;
 justify-content:center;
-margin-top:15px;
+margin-top:20px;
+margin-bottom:5px;
 }
 .tema-chip{
-background: var(–verde-claro);
-color: var(–azul-oscuro);
-padding: 6px 14px;
+color: #1A1A2E;
+padding: 8px 16px;
 border-radius: 20px;
 font-size:14px;
-font-weight:600;
-border: 2px solid var(–verde);
+font-weight:800;
+border: 2px solid;
 }
+.tema-chip.c1{ background:#FFE082; border-color:#FF8F00; box-shadow: 0 3px 0 #FF8F00; }
+.tema-chip.c2{ background:#A5D6A7; border-color:#2E7D32; box-shadow: 0 3px 0 #2E7D32; color:#1B3A1F; }
+.tema-chip.c3{ background:#90CAF9; border-color:#0D47A1; box-shadow: 0 3px 0 #0D47A1; color:#0A2540; }
+.tema-chip.c4{ background:#F48FB1; border-color:#AD1457; box-shadow: 0 3px 0 #AD1457; color:#FFFFFF; }
+.tema-chip.c5{ background:#CE93D8; border-color:#6A1B9A; box-shadow: 0 3px 0 #6A1B9A; color:#FFFFFF; }
+.tema-chip.c6{ background:#FFAB91; border-color:#BF360C; box-shadow: 0 3px 0 #BF360C; color:#3E2723; }
+.tema-chip.c7{ background:#80DEEA; border-color:#00695C; box-shadow: 0 3px 0 #00695C; color:#003D33; }
 
 .btn-empezar{
-background: linear-gradient(135deg, var(–rojo), var(–naranja));
-color:white;
+background: linear-gradient(135deg, #D32F2F, #F57C00);
+color:#FFFFFF;
 border:none;
 padding: 16px 40px;
 font-size: 22px;
-font-family:‘Bubblegum Sans’, cursive;
+font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
+font-weight:800;
 border-radius: 50px;
 cursor: pointer;
 margin-top:20px;
-box-shadow: 0 6px 0 #B71C1C, 0 10px 20px rgba(230,57,70,.4);
+box-shadow: 0 6px 0 #8B0000, 0 10px 20px rgba(211,47,47,.4);
 transition: all .15s ease;
 letter-spacing: 1px;
+text-shadow: 1px 1px 0 rgba(0,0,0,.4);
 }
 .btn-empezar:hover{
 transform: translateY(-2px);
-box-shadow: 0 8px 0 #B71C1C, 0 12px 25px rgba(230,57,70,.5);
+box-shadow: 0 8px 0 #8B0000, 0 12px 25px rgba(211,47,47,.5);
 }
 .btn-empezar:active{
 transform: translateY(4px);
-box-shadow: 0 2px 0 #B71C1C;
+box-shadow: 0 2px 0 #8B0000;
 }
 
 /* ===== PROGRESS ===== */
@@ -183,7 +208,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 margin-bottom:8px;
-font-weight:600;
+font-weight:800;
 }
 .progreso-info .pregunta-num{
 color:var(–azul-oscuro);
@@ -191,14 +216,15 @@ font-size:16px;
 }
 .progreso-info .puntos{
 background: var(–amarillo);
-padding: 4px 12px;
+padding: 5px 14px;
 border-radius: 15px;
 color: var(–texto);
 font-size:15px;
+border: 2px solid var(–amarillo-oscuro);
 }
 .progreso-bar{
 width:100%;
-height: 14px;
+height: 16px;
 background: #E0E0E0;
 border-radius: 10px;
 overflow:hidden;
@@ -233,21 +259,22 @@ to { opacity:1; transform: translateY(0) scale(1); }
 .badge-tipo{
 display:inline-block;
 background: var(–morado);
-color:white;
-padding: 5px 14px;
+color:#FFFFFF;
+padding: 6px 14px;
 border-radius: 15px;
 font-size:13px;
-font-weight:600;
-margin-bottom:12px;
+font-weight:800;
+margin-bottom:14px;
 text-transform: uppercase;
 letter-spacing: .5px;
+border: 2px solid #4A148C;
 }
-.badge-tipo.vf{ background: var(–naranja); }
-.badge-tipo.completar{ background: var(–verde); }
+.badge-tipo.vf{ background: var(–naranja); border-color:#BF360C; }
+.badge-tipo.completar{ background: var(–verde); border-color:#1B5E20; }
 
 .pregunta-texto{
 font-size: 19px;
-font-weight:600;
+font-weight:800;
 color: var(–azul-oscuro);
 line-height:1.4;
 margin-bottom:20px;
@@ -260,12 +287,12 @@ gap:12px;
 }
 .opcion{
 background: var(–crema);
-border: 3px solid #DDD;
+border: 3px solid #BBB;
 border-radius: 18px;
 padding: 14px 18px;
 cursor:pointer;
 font-size: 16px;
-font-weight:500;
+font-weight:700;
 text-align:left;
 transition: all .2s ease;
 display:flex;
@@ -276,34 +303,38 @@ color: var(–texto);
 }
 .opcion:hover:not(:disabled){
 border-color: var(–azul);
-background: #E8F4FD;
+background: #E3F2FD;
 transform: translateX(4px);
 }
 .opcion .letra{
 background: var(–azul);
-color:white;
-width: 32px;
-height:32px;
+color:#FFFFFF;
+width: 34px;
+height:34px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-weight:700;
+font-weight:800;
 flex-shrink:0;
+font-size:16px;
+border: 2px solid var(–azul-oscuro);
 }
 .opcion.correcta{
 border-color: var(–verde);
-background: #D4F1DD;
+background: #C8E6C9;
 animation: brincar .5s ease;
+color: #1B5E20;
 }
-.opcion.correcta .letra{ background: var(–verde); }
+.opcion.correcta .letra{ background: var(–verde); border-color:#1B5E20; }
 .opcion.incorrecta{
 border-color: var(–rojo);
-background: #FFD6D6;
+background: #FFCDD2;
 animation: temblar .5s ease;
+color: #B71C1C;
 }
-.opcion.incorrecta .letra{ background: var(–rojo); }
-.opcion:disabled{ cursor: not-allowed; opacity:.85; }
+.opcion.incorrecta .letra{ background: var(–rojo); border-color:#8B0000; }
+.opcion:disabled{ cursor: not-allowed; opacity:.95; }
 
 @keyframes brincar{
 0%,100%{ transform: translateY(0); }
@@ -324,45 +355,49 @@ border: 3px solid var(–morado);
 border-radius: 15px;
 font-size:17px;
 font-family: inherit;
+font-weight:700;
 background: var(–crema);
 color: var(–texto);
 }
 .input-completar:focus{
 outline:none;
 border-color: var(–azul);
-box-shadow: 0 0 0 4px rgba(0,148,217,.2);
+box-shadow: 0 0 0 4px rgba(25,118,210,.25);
 }
 .btn-comprobar{
 background: var(–verde);
-color:white;
+color:#FFFFFF;
 border:none;
 padding: 12px 28px;
 font-size:17px;
-font-family:‘Bubblegum Sans’, cursive;
+font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
+font-weight:800;
 border-radius: 30px;
 cursor:pointer;
 margin-top:14px;
-box-shadow: 0 4px 0 #2D7A5F;
+box-shadow: 0 4px 0 #1B5E20;
 transition: all .15s ease;
+text-shadow: 1px 1px 0 rgba(0,0,0,.3);
 }
-.btn-comprobar:hover{ transform: translateY(-2px); box-shadow: 0 6px 0 #2D7A5F; }
-.btn-comprobar:active{ transform: translateY(2px); box-shadow: 0 1px 0 #2D7A5F; }
+.btn-comprobar:hover{ transform: translateY(-2px); box-shadow: 0 6px 0 #1B5E20; }
+.btn-comprobar:active{ transform: translateY(2px); box-shadow: 0 1px 0 #1B5E20; }
 .btn-comprobar:disabled{ background:#999; box-shadow:none; cursor:not-allowed; }
 
 /* Feedback */
 .feedback{
 margin-top:18px;
-padding: 15px 18px;
+padding: 16px 18px;
 border-radius: 15px;
 font-size:16px;
 line-height:1.5;
 display:none;
 border-left: 6px solid;
 animation: aparecer .4s ease;
+font-weight:600;
 }
 .feedback.activo{ display:block; }
 .feedback.bien{
-background: #E8F8EF;
+background: #E8F5E9;
 color: #1B5E20;
 border-color: var(–verde);
 }
@@ -371,25 +406,33 @@ background: #FFEBEE;
 color: #B71C1C;
 border-color: var(–rojo);
 }
-.feedback strong{ display:block; font-size:17px; margin-bottom:5px; font-family:‘Bubblegum Sans’, cursive; }
+.feedback strong{
+display:block;
+font-size:17px;
+margin-bottom:6px;
+font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
+font-weight:800;
+}
 
 .btn-siguiente{
 background: linear-gradient(135deg, var(–azul), var(–morado));
-color:white;
+color:#FFFFFF;
 border:none;
 padding: 13px 30px;
 font-size:18px;
-font-family:‘Bubblegum Sans’, cursive;
+font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
+font-weight:800;
 border-radius: 30px;
 cursor:pointer;
 margin-top:15px;
-box-shadow: 0 4px 0 var(–azul-oscuro);
+box-shadow: 0 4px 0 var(–azul-fuerte);
 transition: all .15s ease;
 display:none;
+text-shadow: 1px 1px 0 rgba(0,0,0,.3);
 }
 .btn-siguiente.visible{ display:inline-block; }
-.btn-siguiente:hover{ transform: translateY(-2px); box-shadow: 0 6px 0 var(–azul-oscuro); }
-.btn-siguiente:active{ transform: translateY(2px); box-shadow: 0 1px 0 var(–azul-oscuro); }
+.btn-siguiente:hover{ transform: translateY(-2px); box-shadow: 0 6px 0 var(–azul-fuerte); }
+.btn-siguiente:active{ transform: translateY(2px); box-shadow: 0 1px 0 var(–azul-fuerte); }
 
 /* ===== RESULTADO ===== */
 .resultado{
@@ -399,7 +442,7 @@ border-radius:30px;
 padding: 35px 25px;
 text-align:center;
 box-shadow: var(–sombra);
-border: 4px solid var(–amarillo);
+border: 4px solid var(–amarillo-oscuro);
 animation: aparecer .6s ease;
 }
 .resultado.activo{ display:block; }
@@ -409,25 +452,27 @@ margin-bottom:10px;
 animation: brincar 1.2s ease infinite;
 }
 .resultado h2{
-font-family:‘Bubblegum Sans’, cursive;
-font-size:34px;
+font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
+font-size:30px;
 color:var(–rojo);
 margin-bottom:15px;
+font-weight:800;
 }
 .resultado .puntaje-final{
 font-size: 60px;
-font-weight:700;
-color: var(–azul);
+font-weight:800;
+color: var(–azul-oscuro);
 margin: 15px 0;
-font-family:‘Bubblegum Sans’, cursive;
+font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
 }
 .resultado .mensaje{
-font-size:18px;
+font-size:17px;
 line-height:1.5;
 color: var(–texto);
 margin-bottom:20px;
 max-width: 500px;
 margin-left:auto; margin-right:auto;
+font-weight:600;
 }
 .resultado .stats{
 display:grid;
@@ -446,28 +491,30 @@ border: 3px solid;
 .stat-box.mal{ border-color: var(–rojo); }
 .stat-box .num{
 font-size:32px;
-font-weight:700;
-font-family:‘Bubblegum Sans’, cursive;
+font-weight:800;
+font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
 }
 .stat-box.bien .num{ color: var(–verde); }
 .stat-box.mal .num{ color: var(–rojo); }
-.stat-box .label{ font-size:13px; font-weight:600; }
+.stat-box .label{ font-size:14px; font-weight:800; color:var(–texto); }
 
 .btn-reiniciar{
 background: linear-gradient(135deg, var(–rojo), var(–rosa));
-color:white;
+color:#FFFFFF;
 border:none;
 padding: 14px 35px;
 font-size:20px;
-font-family:‘Bubblegum Sans’, cursive;
+font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
+font-weight:800;
 border-radius: 50px;
 cursor:pointer;
-box-shadow: 0 5px 0 #B71C1C;
+box-shadow: 0 5px 0 var(–rojo-oscuro);
 transition: all .15s ease;
 margin-top:10px;
+text-shadow: 1px 1px 0 rgba(0,0,0,.3);
 }
-.btn-reiniciar:hover{ transform: translateY(-2px); box-shadow: 0 7px 0 #B71C1C; }
-.btn-reiniciar:active{ transform: translateY(3px); box-shadow: 0 2px 0 #B71C1C; }
+.btn-reiniciar:hover{ transform: translateY(-2px); box-shadow: 0 7px 0 var(–rojo-oscuro); }
+.btn-reiniciar:active{ transform: translateY(3px); box-shadow: 0 2px 0 var(–rojo-oscuro); }
 
 /* Confeti */
 .confeti{
@@ -488,7 +535,7 @@ text-align:center;
 margin-top: 40px;
 color: var(–azul-oscuro);
 font-size:14px;
-font-weight:500;
+font-weight:700;
 }
 footer .corazon{ color: var(–rojo); animation: latir 1.2s ease infinite; display:inline-block; }
 @keyframes latir { 0%,100%{transform:scale(1);} 50%{transform:scale(1.2);} }
@@ -497,11 +544,15 @@ footer .corazon{ color: var(–rojo); animation: latir 1.2s ease infinite; displ
 @media (max-width: 480px){
 body{ padding: 15px 10px 40px; }
 header{ padding: 25px 15px; }
+header h1{ font-size: 24px; }
 .pregunta-card{ padding: 20px 16px; }
 .pregunta-texto{ font-size:17px; }
 .opcion{ font-size:15px; padding: 12px 14px; }
 .resultado{ padding: 28px 18px; }
+.resultado h2{ font-size:24px; }
 .resultado .puntaje-final{ font-size:48px; }
+.tema-chip{ font-size:13px; padding: 7px 13px; }
+.intro h2{ font-size:22px; }
 }
 </style>
 
@@ -522,13 +573,13 @@ header{ padding: 25px 15px; }
     <p>Hola amigo/a 👋 Este cuestionario te ayudará a repasar todo lo que has aprendido.</p>
     <p>Tendrás <strong>preguntas de selección, verdadero/falso y completar</strong>. ¡Mucha suerte! 🍀</p>
     <div class="temas">
-      <span class="tema-chip">🌎 Hemisferios</span>
-      <span class="tema-chip">🗺️ Territorio CR</span>
-      <span class="tema-chip">🌿 Biodiversidad</span>
-      <span class="tema-chip">🌍 Ciudadanía Global</span>
-      <span class="tema-chip">⚔️ Batalla Santa Rosa</span>
-      <span class="tema-chip">🏛️ Batalla de Rivas</span>
-      <span class="tema-chip">📖 Estudios Sociales</span>
+      <span class="tema-chip c1">🌎 Hemisferios</span>
+      <span class="tema-chip c2">🗺️ Territorio CR</span>
+      <span class="tema-chip c3">🌿 Biodiversidad</span>
+      <span class="tema-chip c4">🌍 Ciudadanía Global</span>
+      <span class="tema-chip c5">⚔️ Batalla Santa Rosa</span>
+      <span class="tema-chip c6">🏛️ Batalla de Rivas</span>
+      <span class="tema-chip c7">📖 Estudios Sociales</span>
     </div>
     <br>
     <button class="btn-empezar" onclick="iniciar()">🚀 ¡Empezar!</button>
@@ -577,7 +628,6 @@ header{ padding: 25px 15px; }
 <script>
 // ============== BANCO DE PREGUNTAS ==============
 const preguntas = [
-  // ----- HEMISFERIOS Y COORDENADAS -----
   {
     tipo: "seleccion",
     tema: "🌎 Hemisferios",
@@ -608,8 +658,6 @@ const preguntas = [
     respuestas: ["occidental", "oeste"],
     explicacion: "Los hemisferios son: Norte, Sur, Oriental y Occidental (también llamado Oeste). 🌐"
   },
-
-  // ----- TERRITORIO COSTARRICENSE -----
   {
     tipo: "seleccion",
     tema: "🗺️ Territorio CR",
@@ -661,8 +709,6 @@ const preguntas = [
     correcta: 1,
     explicacion: "Costa Rica se ubica en la zona intertropical, entre los Trópicos de Cáncer y Capricornio. ☀️"
   },
-
-  // ----- BIODIVERSIDAD Y VENTAJAS -----
   {
     tipo: "vf",
     tema: "🌿 Biodiversidad",
@@ -691,8 +737,6 @@ const preguntas = [
     correcta: 3,
     explicacion: "¡Correcto! La biodiversidad es una VENTAJA, no una desventaja. Las desventajas son los desastres naturales. 🌋"
   },
-
-  // ----- CIUDADANÍA GLOBAL -----
   {
     tipo: "vf",
     tema: "🌍 Ciudadanía Global",
@@ -713,8 +757,6 @@ const preguntas = [
     correcta: 1,
     explicacion: "Un aspecto negativo es que las grandes empresas tienen más poder que los gobiernos. ⚖️"
   },
-
-  // ----- EVENTOS Y DESASTRES -----
   {
     tipo: "completar",
     tema: "🌪️ Naturaleza",
@@ -722,8 +764,6 @@ const preguntas = [
     respuestas: ["evento"],
     explicacion: "Un EVENTO natural no afecta al ser humano, mientras que un desastre natural sí lo afecta. 🌊"
   },
-
-  // ----- ESTUDIOS SOCIALES -----
   {
     tipo: "seleccion",
     tema: "📖 Estudios Sociales",
@@ -744,8 +784,6 @@ const preguntas = [
     correcta: true,
     explicacion: "¡Muy bien! También nos ayudan a ser mejores ciudadanos. 🤝"
   },
-
-  // ----- AMÉRICA -----
   {
     tipo: "seleccion",
     tema: "🌎 América",
@@ -761,8 +799,6 @@ const preguntas = [
     respuestas: ["sur", "sud"],
     explicacion: "América se divide en: América del Norte, América Central y América del Sur (Suramérica). 🗺️"
   },
-
-  // ----- BATALLA DE SANTA ROSA -----
   {
     tipo: "seleccion",
     tema: "⚔️ Batalla Santa Rosa",
@@ -806,8 +842,6 @@ const preguntas = [
     correcta: 2,
     explicacion: "¡La batalla fue muy corta, duró apenas unos minutos! 🕐"
   },
-
-  // ----- BATALLA DE RIVAS -----
   {
     tipo: "completar",
     tema: "🏛️ Batalla de Rivas",
@@ -867,13 +901,11 @@ function mostrarPregunta(){
 
   const p = preguntas[preguntaActual];
 
-  // Actualizar progreso
   document.getElementById('numActual').textContent = preguntaActual + 1;
   document.getElementById('puntosActuales').textContent = puntos;
   const pct = ((preguntaActual) / preguntas.length) * 100;
   document.getElementById('progresoFill').style.width = pct + '%';
 
-  // Crear card
   const card = document.createElement('div');
   card.className = 'pregunta-card activa';
 
@@ -931,7 +963,6 @@ function mostrarPregunta(){
   card.innerHTML = html;
   cont.appendChild(card);
 
-  // Permitir Enter para completar
   if(p.tipo === 'completar'){
     setTimeout(() => {
       const input = document.getElementById('inputResp');
@@ -992,18 +1023,19 @@ function responderCompletar(){
   input.disabled = true;
   document.getElementById('btnComprobar').disabled = true;
 
-  // Comparación flexible (sin tildes ni mayúsculas)
   const normalizar = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   const respNorm = normalizar(respUsuario);
   const acertado = p.respuestas.some(r => normalizar(r) === respNorm);
 
   if(acertado){
     input.style.borderColor = 'var(--verde)';
-    input.style.background = '#D4F1DD';
+    input.style.background = '#C8E6C9';
+    input.style.color = '#1B5E20';
     acierto(p.explicacion);
   } else {
     input.style.borderColor = 'var(--rojo)';
-    input.style.background = '#FFD6D6';
+    input.style.background = '#FFCDD2';
+    input.style.color = '#B71C1C';
     const correctaTexto = p.respuestas[0].charAt(0).toUpperCase() + p.respuestas[0].slice(1);
     error(`La respuesta correcta era: <strong>${correctaTexto}</strong><br>${p.explicacion}`);
   }
@@ -1054,16 +1086,16 @@ function mostrarResultado(){
     granConfeti();
   } else if(pct >= 80){
     emoji = '🎉'; titulo = '¡Excelente trabajo!';
-    mensaje = '¡Felicidades Teticu! Tienes muy buen dominio del tema. Repasa lo que fallaste y estarás perfecto/a. 💪';
+    mensaje = '¡Felicidades! Tienes muy buen dominio del tema. Repasa lo que fallaste y estarás perfecto/a. 💪';
     granConfeti();
   } else if(pct >= 60){
-    emoji = '👍'; titulo = '¡Buen trabajo Teticu!';
+    emoji = '👍'; titulo = '¡Buen trabajo!';
     mensaje = 'Vas por buen camino. Repasa los temas donde tuviste errores y vuelve a intentarlo. 📖';
   } else if(pct >= 40){
-    emoji = '📚'; titulo = '¡Sigue practicando Teticu!';
+    emoji = '📚'; titulo = '¡Sigue practicando!';
     mensaje = 'Necesitas estudiar un poquito más. ¡No te rindas! Lee de nuevo el material y vuelve a intentarlo. 💡';
   } else {
-    emoji = '💪'; titulo = '¡Tú puedes Teticu!';
+    emoji = '💪'; titulo = '¡Tú puedes!';
     mensaje = 'No te desanimes. Repasa bien la materia y vuelve a intentar. ¡Cada intento te hace mejor! 🌱';
   }
 
@@ -1085,13 +1117,13 @@ function reiniciar(){
 
 // ============== CONFETI ==============
 function miniConfeti(){
-  const colores = ['#FFD23F','#43AA8B','#0094D9','#E63946','#9B5DE5','#FF9F1C'];
+  const colores = ['#FFC107','#2E7D32','#1976D2','#D32F2F','#7B1FA2','#F57C00'];
   for(let i=0; i<20; i++){
     crearConfeti(colores[Math.floor(Math.random()*colores.length)]);
   }
 }
 function granConfeti(){
-  const colores = ['#FFD23F','#43AA8B','#0094D9','#E63946','#9B5DE5','#FF9F1C','#FF8FA3'];
+  const colores = ['#FFC107','#2E7D32','#1976D2','#D32F2F','#7B1FA2','#F57C00','#EC407A'];
   for(let i=0; i<100; i++){
     setTimeout(() => crearConfeti(colores[Math.floor(Math.random()*colores.length)]), i*30);
   }
