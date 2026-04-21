@@ -2,1112 +2,1113 @@
 
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiz para Teticu Ciencias 4to Año — El Cuerpo Humano</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>🇨🇷 Cuestionario de Estudios Sociales para Isma - 4to Año</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Bubblegum+Sans&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #fdf6e3;
-    --bg-soft: #fef9ea;
-    --ink: #2d3142;
-    --ink-soft: #5c6378;
-    --accent: #e63946;
-    --accent-soft: #fca5a5;
-    --success: #2a9d8f;
-    --success-soft: #a7e8dd;
-    --warn: #f4a261;
-    --paper: #ffffff;
-    --line: #e8dcc4;
-    --shadow: 0 4px 20px rgba(45, 49, 66, 0.08);
-    --shadow-lg: 0 12px 40px rgba(45, 49, 66, 0.12);
+  :root{
+    --azul:#0094D9;
+    --azul-oscuro:#005A8A;
+    --rojo:#E63946;
+    --amarillo:#FFD23F;
+    --verde:#43AA8B;
+    --verde-claro:#A8E6CF;
+    --crema:#FFF8E7;
+    --rosa:#FF8FA3;
+    --morado:#9B5DE5;
+    --naranja:#FF9F1C;
+    --texto:#2B2D42;
+    --sombra: 0 6px 0 rgba(0,0,0,.12);
   }
 
-- { box-sizing: border-box; margin: 0; padding: 0; }
+*{box-sizing:border-box; margin:0; padding:0;}
 
-body {
-font-family: ‘Nunito’, sans-serif;
-background: var(–bg);
+body{
+font-family:‘Fredoka’, sans-serif;
+background:
+radial-gradient(circle at 10% 20%, rgba(255,210,63,.25) 0%, transparent 40%),
+radial-gradient(circle at 90% 80%, rgba(155,93,229,.2) 0%, transparent 40%),
+radial-gradient(circle at 50% 50%, rgba(67,170,139,.15) 0%, transparent 50%),
+linear-gradient(180deg, #FFF8E7 0%, #FFE5D9 100%);
+min-height:100vh;
+color:var(–texto);
+padding:20px 15px 60px;
+background-attachment: fixed;
+}
+
+/* Patrón decorativo de fondo */
+body::before{
+content:””;
+position:fixed;
+inset:0;
 background-image:
-radial-gradient(circle at 10% 20%, rgba(230, 57, 70, 0.05) 0%, transparent 40%),
-radial-gradient(circle at 90% 80%, rgba(42, 157, 143, 0.05) 0%, transparent 40%);
-color: var(–ink);
-min-height: 100vh;
-padding: 20px;
-line-height: 1.5;
+radial-gradient(circle at 20px 20px, rgba(0,148,217,.08) 2px, transparent 2px),
+radial-gradient(circle at 60px 60px, rgba(230,57,70,.08) 2px, transparent 2px);
+background-size: 80px 80px;
+pointer-events:none;
+z-index:0;
 }
 
-.container {
-max-width: 820px;
-margin: 0 auto;
+.container{
+max-width:880px;
+margin:0 auto;
+position:relative;
+z-index:1;
 }
 
-/* ============ HEADER ============ */
-.header {
-text-align: center;
-padding: 40px 20px 30px;
-position: relative;
+/* ===== HEADER ===== */
+header{
+text-align:center;
+background: linear-gradient(135deg, var(–azul) 0%, var(–verde) 100%);
+padding: 35px 25px 30px;
+border-radius: 30px;
+box-shadow: 0 10px 0 rgba(0,90,138,.3), 0 15px 40px rgba(0,0,0,.15);
+margin-bottom:30px;
+position:relative;
+overflow:hidden;
+border: 4px solid white;
 }
-
-.header::before {
-content: “🔬 🫀 🫁 🧬”;
-font-size: 28px;
-letter-spacing: 12px;
-display: block;
-margin-bottom: 16px;
-opacity: 0.8;
+header::before{
+content:“⭐”;
+position:absolute;
+top:15px; left:20px;
+font-size:30px;
+animation: girar 8s linear infinite;
 }
-
-.header h1 {
-font-family: ‘Fraunces’, serif;
-font-weight: 800;
-font-size: clamp(28px, 5vw, 44px);
-line-height: 1.1;
-letter-spacing: -0.02em;
-color: var(–ink);
-margin-bottom: 8px;
+header::after{
+content:“🌟”;
+position:absolute;
+bottom:15px; right:20px;
+font-size:30px;
+animation: girar 6s linear infinite reverse;
 }
+@keyframes girar { to { transform: rotate(360deg); } }
 
-.header h1 span {
-color: var(–accent);
-font-style: italic;
+header h1{
+font-family:‘Bubblegum Sans’, cursive;
+font-size: clamp(28px, 6vw, 44px);
+color:white;
+text-shadow: 3px 3px 0 var(–azul-oscuro), 5px 5px 0 rgba(0,0,0,.2);
+line-height:1.1;
+margin-bottom:10px;
 }
-
-.header .subtitle {
-font-size: 16px;
-color: var(–ink-soft);
-font-weight: 600;
-letter-spacing: 0.5px;
-text-transform: uppercase;
-}
-
-.header .meta {
-margin-top: 16px;
-font-size: 14px;
-color: var(–ink-soft);
-}
-
-/* ============ PROGRESS ============ */
-.progress-wrapper {
-background: var(–paper);
-border-radius: 16px;
-padding: 16px 20px;
-margin-bottom: 24px;
-box-shadow: var(–shadow);
-border: 2px solid var(–line);
-position: sticky;
-top: 10px;
-z-index: 10;
-}
-
-.progress-top {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 10px;
-font-weight: 700;
-font-size: 14px;
-}
-
-.progress-count { color: var(–accent); }
-.progress-total { color: var(–ink-soft); }
-
-.progress-bar {
-height: 8px;
-background: var(–line);
-border-radius: 4px;
-overflow: hidden;
-}
-
-.progress-fill {
-height: 100%;
-background: linear-gradient(90deg, var(–accent) 0%, var(–warn) 100%);
-border-radius: 4px;
-width: 0%;
-transition: width 0.4s ease;
-}
-
-/* ============ QUESTION CARD ============ */
-.question-card {
-background: var(–paper);
+header .sub{
+color:white;
+font-size:18px;
+font-weight:500;
+background: rgba(255,255,255,.2);
+display:inline-block;
+padding: 6px 18px;
 border-radius: 20px;
-padding: 28px;
-margin-bottom: 20px;
-box-shadow: var(–shadow);
-border: 2px solid var(–line);
-position: relative;
-transition: transform 0.2s ease, box-shadow 0.2s ease;
+backdrop-filter: blur(4px);
 }
 
-.question-card:hover {
-box-shadow: var(–shadow-lg);
+/* ===== INTRO PANEL ===== */
+.intro{
+background:white;
+border-radius:25px;
+padding:25px;
+margin-bottom:25px;
+box-shadow: var(–sombra);
+border: 3px dashed var(–amarillo);
+text-align:center;
 }
-
-.question-card.answered {
-border-color: var(–success-soft);
+.intro h2{
+color:var(–rojo);
+font-family:‘Bubblegum Sans’, cursive;
+font-size:26px;
+margin-bottom:10px;
 }
-
-.question-number {
-position: absolute;
-top: -14px;
-left: 20px;
-background: var(–accent);
-color: white;
-font-family: ‘Fraunces’, serif;
-font-weight: 800;
-font-size: 14px;
+.intro p{
+font-size:17px;
+line-height:1.5;
+margin-bottom:8px;
+}
+.intro .temas{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+justify-content:center;
+margin-top:15px;
+}
+.tema-chip{
+background: var(–verde-claro);
+color: var(–azul-oscuro);
 padding: 6px 14px;
 border-radius: 20px;
-letter-spacing: 0.5px;
+font-size:14px;
+font-weight:600;
+border: 2px solid var(–verde);
 }
 
-.question-type {
-position: absolute;
-top: -14px;
-right: 20px;
-background: var(–bg-soft);
-color: var(–ink-soft);
-font-size: 11px;
-font-weight: 700;
-padding: 6px 12px;
-border-radius: 20px;
-letter-spacing: 1px;
-text-transform: uppercase;
-border: 2px solid var(–line);
-}
-
-.question-text {
-font-family: ‘Fraunces’, serif;
-font-size: 19px;
-font-weight: 600;
-line-height: 1.4;
-margin: 12px 0 20px;
-color: var(–ink);
-}
-
-/* ============ OPTIONS ============ */
-.options {
-display: flex;
-flex-direction: column;
-gap: 10px;
-}
-
-.option {
-display: flex;
-align-items: center;
-gap: 12px;
-padding: 14px 16px;
-background: var(–bg-soft);
-border: 2px solid transparent;
-border-radius: 12px;
-cursor: pointer;
-transition: all 0.15s ease;
-font-size: 15px;
-font-weight: 600;
-}
-
-.option:hover {
-background: #fdf0d5;
-border-color: var(–warn);
-transform: translateX(3px);
-}
-
-.option input {
-display: none;
-}
-
-.option-marker {
-width: 24px;
-height: 24px;
-border: 2px solid var(–ink-soft);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-shrink: 0;
-font-size: 12px;
-font-weight: 800;
-color: var(–ink-soft);
-background: var(–paper);
-transition: all 0.2s ease;
-}
-
-.option.selected {
-background: #ffe3d5;
-border-color: var(–accent);
-}
-
-.option.selected .option-marker {
-background: var(–accent);
-color: white;
-border-color: var(–accent);
-}
-
-/* fill-in input */
-.fill-input {
-width: 100%;
-padding: 14px 16px;
-font-family: ‘Nunito’, sans-serif;
-font-size: 16px;
-font-weight: 600;
-border: 2px solid var(–line);
-border-radius: 12px;
-background: var(–bg-soft);
-color: var(–ink);
-outline: none;
-transition: all 0.15s ease;
-}
-
-.fill-input:focus {
-border-color: var(–accent);
-background: var(–paper);
-}
-
-/* ============ FEEDBACK (post submit) ============ */
-.feedback {
-display: none;
-margin-top: 16px;
-padding: 16px;
-border-radius: 12px;
-font-size: 14px;
-line-height: 1.5;
-}
-
-.feedback.show { display: block; animation: slideIn 0.3s ease; }
-
-@keyframes slideIn {
-from { opacity: 0; transform: translateY(-8px); }
-to { opacity: 1; transform: translateY(0); }
-}
-
-.feedback.correct {
-background: #e8f5f2;
-border-left: 4px solid var(–success);
-}
-
-.feedback.incorrect {
-background: #fde8e8;
-border-left: 4px solid var(–accent);
-}
-
-.feedback-title {
-font-weight: 800;
-font-size: 15px;
-margin-bottom: 6px;
-display: flex;
-align-items: center;
-gap: 8px;
-}
-
-.feedback.correct .feedback-title { color: var(–success); }
-.feedback.incorrect .feedback-title { color: var(–accent); }
-
-.feedback-answer {
-margin-top: 8px;
-padding-top: 8px;
-border-top: 1px dashed rgba(0,0,0,0.1);
-font-weight: 700;
-}
-
-.feedback-explanation {
-margin-top: 6px;
-color: var(–ink-soft);
-font-weight: 500;
-}
-
-/* after submit, mark options */
-.option.correct-answer {
-background: #e8f5f2 !important;
-border-color: var(–success) !important;
-}
-.option.correct-answer .option-marker {
-background: var(–success);
-border-color: var(–success);
-color: white;
-}
-
-.option.wrong-answer {
-background: #fde8e8 !important;
-border-color: var(–accent) !important;
-opacity: 0.8;
-}
-
-/* ============ SUBMIT BTN ============ */
-.submit-wrapper {
-text-align: center;
-padding: 20px 0 40px;
-}
-
-.submit-btn {
-font-family: ‘Fraunces’, serif;
-font-weight: 800;
-font-size: 18px;
-letter-spacing: 0.5px;
+.btn-empezar{
+background: linear-gradient(135deg, var(–rojo), var(–naranja));
+color:white;
+border:none;
 padding: 16px 40px;
-background: var(–accent);
-color: white;
-border: none;
+font-size: 22px;
+font-family:‘Bubblegum Sans’, cursive;
 border-radius: 50px;
 cursor: pointer;
-box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
-transition: all 0.2s ease;
+margin-top:20px;
+box-shadow: 0 6px 0 #B71C1C, 0 10px 20px rgba(230,57,70,.4);
+transition: all .15s ease;
+letter-spacing: 1px;
 }
-
-.submit-btn:hover:not(:disabled) {
+.btn-empezar:hover{
 transform: translateY(-2px);
-box-shadow: 0 12px 28px rgba(230, 57, 70, 0.4);
+box-shadow: 0 8px 0 #B71C1C, 0 12px 25px rgba(230,57,70,.5);
+}
+.btn-empezar:active{
+transform: translateY(4px);
+box-shadow: 0 2px 0 #B71C1C;
 }
 
-.submit-btn:disabled {
-background: var(–ink-soft);
-cursor: not-allowed;
-box-shadow: none;
+/* ===== PROGRESS ===== */
+.progreso-wrap{
+display:none;
+background:white;
+border-radius: 20px;
+padding: 15px 20px;
+margin-bottom:20px;
+box-shadow: var(–sombra);
+border: 3px solid var(–azul);
+}
+.progreso-wrap.activo{ display:block; animation: aparecer .4s ease; }
+.progreso-info{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:8px;
+font-weight:600;
+}
+.progreso-info .pregunta-num{
+color:var(–azul-oscuro);
+font-size:16px;
+}
+.progreso-info .puntos{
+background: var(–amarillo);
+padding: 4px 12px;
+border-radius: 15px;
+color: var(–texto);
+font-size:15px;
+}
+.progreso-bar{
+width:100%;
+height: 14px;
+background: #E0E0E0;
+border-radius: 10px;
+overflow:hidden;
+border: 2px solid var(–texto);
+}
+.progreso-fill{
+height:100%;
+background: linear-gradient(90deg, var(–verde), var(–amarillo));
+width:0%;
+transition: width .5s ease;
+border-radius: 8px;
 }
 
-.submit-hint {
-margin-top: 12px;
-color: var(–ink-soft);
-font-size: 13px;
-font-weight: 600;
+/* ===== PREGUNTA ===== */
+.pregunta-card{
+display:none;
+background:white;
+border-radius: 25px;
+padding: 25px 22px;
+box-shadow: var(–sombra);
+border: 4px solid var(–morado);
+animation: aparecer .5s ease;
+margin-bottom:20px;
+}
+.pregunta-card.activa{ display:block; }
+
+@keyframes aparecer{
+from { opacity:0; transform: translateY(20px) scale(.97); }
+to { opacity:1; transform: translateY(0) scale(1); }
 }
 
-/* ============ RESULTS ============ */
-.results {
-display: none;
-background: var(–paper);
-border-radius: 24px;
-padding: 40px 28px;
-text-align: center;
-margin-bottom: 24px;
-box-shadow: var(–shadow-lg);
-border: 3px solid var(–accent);
-}
-
-.results.show { display: block; animation: fadeIn 0.5s ease; }
-
-@keyframes fadeIn {
-from { opacity: 0; transform: scale(0.95); }
-to { opacity: 1; transform: scale(1); }
-}
-
-.results-emoji { font-size: 56px; margin-bottom: 12px; }
-
-.results h2 {
-font-family: ‘Fraunces’, serif;
-font-size: 32px;
-font-weight: 800;
-margin-bottom: 8px;
-}
-
-.score-circle {
-display: inline-flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-width: 160px;
-height: 160px;
-border-radius: 50%;
-background: linear-gradient(135deg, var(–accent) 0%, var(–warn) 100%);
-color: white;
-margin: 20px 0;
-box-shadow: 0 10px 30px rgba(230, 57, 70, 0.3);
-}
-
-.score-circle .score {
-font-family: ‘Fraunces’, serif;
-font-size: 48px;
-font-weight: 800;
-line-height: 1;
-}
-
-.score-circle .total {
-font-size: 14px;
-font-weight: 700;
-opacity: 0.9;
-margin-top: 4px;
-}
-
-.percentage {
-font-size: 20px;
-font-weight: 800;
-color: var(–ink);
-margin-bottom: 16px;
-}
-
-.results-message {
-font-size: 16px;
-color: var(–ink-soft);
-max-width: 480px;
-margin: 0 auto 24px;
-line-height: 1.6;
-}
-
-.results-actions {
-display: flex;
-gap: 12px;
-justify-content: center;
-flex-wrap: wrap;
-}
-
-.btn-secondary {
-font-family: ‘Nunito’, sans-serif;
-font-weight: 700;
-font-size: 15px;
-padding: 12px 24px;
-background: var(–paper);
-color: var(–ink);
-border: 2px solid var(–line);
-border-radius: 50px;
-cursor: pointer;
-transition: all 0.2s ease;
-}
-
-.btn-secondary:hover {
-border-color: var(–accent);
-color: var(–accent);
-}
-
-/* ============ SECTION DIVIDER ============ */
-.section-divider {
-display: flex;
-align-items: center;
-gap: 16px;
-margin: 32px 0 20px;
-padding: 0 4px;
-}
-
-.section-divider::before,
-.section-divider::after {
-content: ‘’;
-flex: 1;
-height: 2px;
-background: var(–line);
-}
-
-.section-divider-text {
-font-family: ‘Fraunces’, serif;
-font-size: 18px;
-font-weight: 800;
-color: var(–accent);
-letter-spacing: 0.5px;
+.badge-tipo{
+display:inline-block;
+background: var(–morado);
+color:white;
+padding: 5px 14px;
+border-radius: 15px;
+font-size:13px;
+font-weight:600;
+margin-bottom:12px;
 text-transform: uppercase;
+letter-spacing: .5px;
+}
+.badge-tipo.vf{ background: var(–naranja); }
+.badge-tipo.completar{ background: var(–verde); }
+
+.pregunta-texto{
+font-size: 19px;
+font-weight:600;
+color: var(–azul-oscuro);
+line-height:1.4;
+margin-bottom:20px;
 }
 
-.footer {
-text-align: center;
-padding: 30px 20px;
-color: var(–ink-soft);
-font-size: 13px;
+.opciones{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+.opcion{
+background: var(–crema);
+border: 3px solid #DDD;
+border-radius: 18px;
+padding: 14px 18px;
+cursor:pointer;
+font-size: 16px;
+font-weight:500;
+text-align:left;
+transition: all .2s ease;
+display:flex;
+align-items:center;
+gap:12px;
+font-family: inherit;
+color: var(–texto);
+}
+.opcion:hover:not(:disabled){
+border-color: var(–azul);
+background: #E8F4FD;
+transform: translateX(4px);
+}
+.opcion .letra{
+background: var(–azul);
+color:white;
+width: 32px;
+height:32px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+flex-shrink:0;
+}
+.opcion.correcta{
+border-color: var(–verde);
+background: #D4F1DD;
+animation: brincar .5s ease;
+}
+.opcion.correcta .letra{ background: var(–verde); }
+.opcion.incorrecta{
+border-color: var(–rojo);
+background: #FFD6D6;
+animation: temblar .5s ease;
+}
+.opcion.incorrecta .letra{ background: var(–rojo); }
+.opcion:disabled{ cursor: not-allowed; opacity:.85; }
+
+@keyframes brincar{
+0%,100%{ transform: translateY(0); }
+30%{ transform: translateY(-8px); }
+60%{ transform: translateY(-4px); }
+}
+@keyframes temblar{
+0%,100%{ transform: translateX(0); }
+25%{ transform: translateX(-6px); }
+75%{ transform: translateX(6px); }
 }
 
-.footer a { color: var(–accent); text-decoration: none; font-weight: 700; }
+/* Input para completar */
+.input-completar{
+width:100%;
+padding: 14px 18px;
+border: 3px solid var(–morado);
+border-radius: 15px;
+font-size:17px;
+font-family: inherit;
+background: var(–crema);
+color: var(–texto);
+}
+.input-completar:focus{
+outline:none;
+border-color: var(–azul);
+box-shadow: 0 0 0 4px rgba(0,148,217,.2);
+}
+.btn-comprobar{
+background: var(–verde);
+color:white;
+border:none;
+padding: 12px 28px;
+font-size:17px;
+font-family:‘Bubblegum Sans’, cursive;
+border-radius: 30px;
+cursor:pointer;
+margin-top:14px;
+box-shadow: 0 4px 0 #2D7A5F;
+transition: all .15s ease;
+}
+.btn-comprobar:hover{ transform: translateY(-2px); box-shadow: 0 6px 0 #2D7A5F; }
+.btn-comprobar:active{ transform: translateY(2px); box-shadow: 0 1px 0 #2D7A5F; }
+.btn-comprobar:disabled{ background:#999; box-shadow:none; cursor:not-allowed; }
 
-@media (max-width: 600px) {
-body { padding: 12px; }
-.question-card { padding: 24px 18px; }
-.question-text { font-size: 17px; }
-.option { font-size: 14px; padding: 12px 14px; }
-.header { padding: 20px 10px 20px; }
+/* Feedback */
+.feedback{
+margin-top:18px;
+padding: 15px 18px;
+border-radius: 15px;
+font-size:16px;
+line-height:1.5;
+display:none;
+border-left: 6px solid;
+animation: aparecer .4s ease;
+}
+.feedback.activo{ display:block; }
+.feedback.bien{
+background: #E8F8EF;
+color: #1B5E20;
+border-color: var(–verde);
+}
+.feedback.mal{
+background: #FFEBEE;
+color: #B71C1C;
+border-color: var(–rojo);
+}
+.feedback strong{ display:block; font-size:17px; margin-bottom:5px; font-family:‘Bubblegum Sans’, cursive; }
+
+.btn-siguiente{
+background: linear-gradient(135deg, var(–azul), var(–morado));
+color:white;
+border:none;
+padding: 13px 30px;
+font-size:18px;
+font-family:‘Bubblegum Sans’, cursive;
+border-radius: 30px;
+cursor:pointer;
+margin-top:15px;
+box-shadow: 0 4px 0 var(–azul-oscuro);
+transition: all .15s ease;
+display:none;
+}
+.btn-siguiente.visible{ display:inline-block; }
+.btn-siguiente:hover{ transform: translateY(-2px); box-shadow: 0 6px 0 var(–azul-oscuro); }
+.btn-siguiente:active{ transform: translateY(2px); box-shadow: 0 1px 0 var(–azul-oscuro); }
+
+/* ===== RESULTADO ===== */
+.resultado{
+display:none;
+background:white;
+border-radius:30px;
+padding: 35px 25px;
+text-align:center;
+box-shadow: var(–sombra);
+border: 4px solid var(–amarillo);
+animation: aparecer .6s ease;
+}
+.resultado.activo{ display:block; }
+.resultado .emoji-grande{
+font-size: 80px;
+margin-bottom:10px;
+animation: brincar 1.2s ease infinite;
+}
+.resultado h2{
+font-family:‘Bubblegum Sans’, cursive;
+font-size:34px;
+color:var(–rojo);
+margin-bottom:15px;
+}
+.resultado .puntaje-final{
+font-size: 60px;
+font-weight:700;
+color: var(–azul);
+margin: 15px 0;
+font-family:‘Bubblegum Sans’, cursive;
+}
+.resultado .mensaje{
+font-size:18px;
+line-height:1.5;
+color: var(–texto);
+margin-bottom:20px;
+max-width: 500px;
+margin-left:auto; margin-right:auto;
+}
+.resultado .stats{
+display:grid;
+grid-template-columns: repeat(2, 1fr);
+gap:12px;
+max-width: 380px;
+margin: 20px auto;
+}
+.stat-box{
+background: var(–crema);
+padding: 14px;
+border-radius: 15px;
+border: 3px solid;
+}
+.stat-box.bien{ border-color: var(–verde); }
+.stat-box.mal{ border-color: var(–rojo); }
+.stat-box .num{
+font-size:32px;
+font-weight:700;
+font-family:‘Bubblegum Sans’, cursive;
+}
+.stat-box.bien .num{ color: var(–verde); }
+.stat-box.mal .num{ color: var(–rojo); }
+.stat-box .label{ font-size:13px; font-weight:600; }
+
+.btn-reiniciar{
+background: linear-gradient(135deg, var(–rojo), var(–rosa));
+color:white;
+border:none;
+padding: 14px 35px;
+font-size:20px;
+font-family:‘Bubblegum Sans’, cursive;
+border-radius: 50px;
+cursor:pointer;
+box-shadow: 0 5px 0 #B71C1C;
+transition: all .15s ease;
+margin-top:10px;
+}
+.btn-reiniciar:hover{ transform: translateY(-2px); box-shadow: 0 7px 0 #B71C1C; }
+.btn-reiniciar:active{ transform: translateY(3px); box-shadow: 0 2px 0 #B71C1C; }
+
+/* Confeti */
+.confeti{
+position:fixed;
+top:-10px;
+width:10px;
+height:10px;
+z-index:1000;
+pointer-events:none;
+animation: caer linear forwards;
+}
+@keyframes caer{
+to { transform: translateY(110vh) rotate(720deg); opacity:0; }
+}
+
+footer{
+text-align:center;
+margin-top: 40px;
+color: var(–azul-oscuro);
+font-size:14px;
+font-weight:500;
+}
+footer .corazon{ color: var(–rojo); animation: latir 1.2s ease infinite; display:inline-block; }
+@keyframes latir { 0%,100%{transform:scale(1);} 50%{transform:scale(1.2);} }
+
+/* Responsive */
+@media (max-width: 480px){
+body{ padding: 15px 10px 40px; }
+header{ padding: 25px 15px; }
+.pregunta-card{ padding: 20px 16px; }
+.pregunta-texto{ font-size:17px; }
+.opcion{ font-size:15px; padding: 12px 14px; }
+.resultado{ padding: 28px 18px; }
+.resultado .puntaje-final{ font-size:48px; }
 }
 </style>
 
 </head>
 <body>
+
 <div class="container">
 
-  <header class="header">
-    <h1>Quiz de <span>Ciencias</span></h1>
-    <div class="subtitle">4to Año · MEP</div>
-    <div class="meta">El Cuerpo Humano · Sistema Respiratorio · Sistema Circulatorio</div>
+  <header>
+    <h1>🇨🇷 ¡Cuestionario Mágico! 📚</h1>
+    <div class="sub">Estudios Sociales · 4to Año · MEP</div>
   </header>
 
-  <div class="progress-wrapper">
-    <div class="progress-top">
-      <span>Progreso</span>
-      <span><span class="progress-count" id="progressCount">0</span><span class="progress-total">/30</span></span>
+  <!-- INTRO -->
+
+  <section class="intro" id="intro">
+    <h2>🎯 ¡Prepárate para tu examen!</h2>
+    <p>Hola amigo/a 👋 Este cuestionario te ayudará a repasar todo lo que has aprendido.</p>
+    <p>Tendrás <strong>preguntas de selección, verdadero/falso y completar</strong>. ¡Mucha suerte! 🍀</p>
+    <div class="temas">
+      <span class="tema-chip">🌎 Hemisferios</span>
+      <span class="tema-chip">🗺️ Territorio CR</span>
+      <span class="tema-chip">🌿 Biodiversidad</span>
+      <span class="tema-chip">🌍 Ciudadanía Global</span>
+      <span class="tema-chip">⚔️ Batalla Santa Rosa</span>
+      <span class="tema-chip">🏛️ Batalla de Rivas</span>
+      <span class="tema-chip">📖 Estudios Sociales</span>
     </div>
-    <div class="progress-bar">
-      <div class="progress-fill" id="progressFill"></div>
+    <br>
+    <button class="btn-empezar" onclick="iniciar()">🚀 ¡Empezar!</button>
+  </section>
+
+  <!-- PROGRESO -->
+
+  <div class="progreso-wrap" id="progresoWrap">
+    <div class="progreso-info">
+      <span class="pregunta-num">Pregunta <span id="numActual">1</span> de <span id="numTotal">20</span></span>
+      <span class="puntos">⭐ <span id="puntosActuales">0</span> pts</span>
     </div>
+    <div class="progreso-bar"><div class="progreso-fill" id="progresoFill"></div></div>
   </div>
 
-  <div id="results" class="results">
-    <div class="results-emoji" id="resultsEmoji">🎉</div>
-    <h2 id="resultsTitle">¡Excelente!</h2>
-    <div class="score-circle">
-      <div class="score" id="scoreNumber">0</div>
-      <div class="total">de 30 correctas</div>
+  <!-- CONTENEDOR PREGUNTAS -->
+
+  <div id="contenedorPreguntas"></div>
+
+  <!-- RESULTADO -->
+
+  <div class="resultado" id="resultado">
+    <div class="emoji-grande" id="emojiResultado">🏆</div>
+    <h2 id="tituloResultado">¡Excelente trabajo!</h2>
+    <div class="puntaje-final"><span id="puntajeFinal">0</span> / <span id="puntajeMax">100</span></div>
+    <div class="stats">
+      <div class="stat-box bien">
+        <div class="num" id="aciertos">0</div>
+        <div class="label">✅ Correctas</div>
+      </div>
+      <div class="stat-box mal">
+        <div class="num" id="errores">0</div>
+        <div class="label">❌ Incorrectas</div>
+      </div>
     </div>
-    <div class="percentage" id="percentage">0%</div>
-    <p class="results-message" id="resultsMessage">Revisá las respuestas abajo para reforzar lo que aprendiste.</p>
-    <div class="results-actions">
-      <button class="btn-secondary" onclick="scrollToFirst()">📖 Ver respuestas</button>
-      <button class="btn-secondary" onclick="resetQuiz()">🔄 Intentar de nuevo</button>
-    </div>
+    <p class="mensaje" id="mensajeFinal">¡Sigue así!</p>
+    <button class="btn-reiniciar" onclick="reiniciar()">🔄 Volver a intentar</button>
   </div>
 
-  <div id="quiz"></div>
-
-  <div class="submit-wrapper">
-    <button class="submit-btn" id="submitBtn" onclick="submitQuiz()" disabled>
-      Enviar Respuestas
-    </button>
-    <div class="submit-hint" id="submitHint">Respondé todas las preguntas para continuar</div>
-  </div>
-
-  <footer class="footer">
-    Quiz educativo · Ciencias 4to Año · MEP<br>
-    Hecho con 💛 para aprender sobre el cuerpo humano
+  <footer>
+    Hecho con <span class="corazon">❤️</span> para estudiar · ¡Pura vida! 🌴
   </footer>
+
 </div>
 
 <script>
-  // ============ QUESTIONS DATA ============
-  const questions = [
-    // ============ SECCIÓN 1: LA CÉLULA ============
-    {
-      section: "La Célula",
-      type: "multiple",
-      question: "¿Qué es la célula?",
-      options: [
-        "Un órgano del cuerpo humano",
-        "La unidad funcional de todo ser vivo y la parte más pequeña de todo organismo",
-        "Un conjunto de tejidos que forman los órganos",
-        "Un sistema del cuerpo humano"
-      ],
-      correct: 1,
-      explanation: "La célula es la unidad funcional de todo ser vivo, la parte más pequeña de todo organismo y realiza funciones vitales."
-    },
-    {
-      type: "multiple",
-      question: "¿Cuál es la parte más grande de la célula y controla sus funciones?",
-      options: [
-        "La membrana celular",
-        "El citoplasma",
-        "El núcleo",
-        "Las organelas"
-      ],
-      correct: 2,
-      explanation: "El núcleo es la parte más grande de la célula, controla las funciones celulares y dentro de él se encuentra el material genético."
-    },
-    {
-      type: "truefalse",
-      question: "La membrana celular o plasmática envuelve la célula y permite el paso de nutrientes hacia su interior.",
-      correct: true,
-      explanation: "Correcto. La membrana celular o plasmática envuelve la célula; en su parte externa pasa los nutrientes hacia su interior y desecha sustancias que no necesita."
-    },
-    {
-      type: "fill",
-      question: "El _______ está dentro de la célula, se compone de agua, contiene las organelas y su función específica es la respiración y nutrición.",
-      correct: ["citoplasma"],
-      explanation: "El citoplasma está adentro de la célula y se compone de agua. Contiene las organelas y su función específica es la respiración y nutrición."
-    },
-    {
-      type: "multiple",
-      question: "¿Cuáles son las dos formas principales de las células?",
-      options: [
-        "Grandes y pequeñas",
-        "Vivas y muertas",
-        "Variables y regulares",
-        "Animales y vegetales"
-      ],
-      correct: 2,
-      explanation: "Existen 2 tipos: VARIABLES (cambian su forma constantemente, como los leucocitos y amebas) y REGULARES (pluricelulares, se adaptan para cumplir ciertas funciones en tejidos u órganos)."
-    },
-    {
-      type: "multiple",
-      question: "Las células con forma ESTRELLADA son características de:",
-      options: [
-        "Los glóbulos rojos",
-        "Las neuronas",
-        "Los fibroblastos",
-        "Las células epiteliales"
-      ],
-      correct: 1,
-      explanation: "Las neuronas tienen forma ESTRELLADA (parecen estrellas). Son el ejemplo clásico de este tipo de célula."
-    },
-    {
-      type: "truefalse",
-      question: "Las células isodiamétricas tienen 3 dimensiones: esféricas, ovoideas y cúbicas.",
-      correct: true,
-      explanation: "Correcto. Las células ISODIAMÉTRICAS (como la célula epitelial) tienen 3 dimensiones: esféricas, ovoideas y cúbicas."
-    },
+// ============== BANCO DE PREGUNTAS ==============
+const preguntas = [
+  // ----- HEMISFERIOS Y COORDENADAS -----
+  {
+    tipo: "seleccion",
+    tema: "🌎 Hemisferios",
+    pregunta: "¿Cuál es la línea imaginaria que divide la Tierra en Hemisferio Norte y Hemisferio Sur?",
+    opciones: ["Meridiano de Greenwich", "Paralelo del Ecuador", "Trópico de Cáncer", "Trópico de Capricornio"],
+    correcta: 1,
+    explicacion: "El Paralelo del Ecuador (o Paralelo Cero) divide la Tierra en Hemisferio Norte y Hemisferio Sur. 🌍"
+  },
+  {
+    tipo: "seleccion",
+    tema: "🌎 Hemisferios",
+    pregunta: "¿Qué línea imaginaria divide la Tierra en Hemisferio Oriental y Occidental?",
+    opciones: ["Paralelo del Ecuador", "Trópico de Cáncer", "Meridiano de Greenwich", "Línea del Polo"],
+    correcta: 2,
+    explicacion: "El Meridiano de Greenwich (o Meridiano Cero) divide la Tierra en Hemisferio Oriental y Occidental. 🧭"
+  },
+  {
+    tipo: "vf",
+    tema: "🌎 Hemisferios",
+    pregunta: "Costa Rica se ubica en el Hemisferio Norte y en el Hemisferio Oeste (Occidental).",
+    correcta: true,
+    explicacion: "¡Correcto! Costa Rica se ubica en el Hemisferio Norte y en el Hemisferio Oeste. 🇨🇷"
+  },
+  {
+    tipo: "completar",
+    tema: "🌎 Hemisferios",
+    pregunta: "Los cuatro hemisferios son: Norte, Sur, Oriental y __________.",
+    respuestas: ["occidental", "oeste"],
+    explicacion: "Los hemisferios son: Norte, Sur, Oriental y Occidental (también llamado Oeste). 🌐"
+  },
 
-    // ============ SECCIÓN 2: NIVELES DE ORGANIZACIÓN ============
-    {
-      section: "Niveles de Organización",
-      type: "multiple",
-      question: "¿Qué son los tejidos?",
-      options: [
-        "Grupos de órganos que trabajan juntos",
-        "Estructuras formadas por un conjunto de células del mismo tipo",
-        "Sistemas que cumplen una función específica",
-        "Partes individuales de una célula"
-      ],
-      correct: 1,
-      explanation: "Los tejidos están formados por un conjunto de células del mismo tipo."
-    },
-    {
-      type: "multiple",
-      question: "¿Cuál es la función del TEJIDO MUSCULAR?",
-      options: [
-        "Cubrir y proteger el cuerpo",
-        "Componer el tejido estomacal",
-        "Producir movimiento",
-        "Sostener el organismo"
-      ],
-      correct: 2,
-      explanation: "El tejido muscular produce movimiento. Otros tejidos tienen funciones diferentes: gástrico (tejido estomacal), óseo (sostén), epitelial (cubre y protege)."
-    },
-    {
-      type: "fill",
-      question: "El tejido _______ está compuesto por los huesos y sostiene el organismo.",
-      correct: ["oseo", "óseo"],
-      explanation: "El tejido ÓSEO está compuesto por los huesos y sostiene el organismo."
-    },
-    {
-      type: "multiple",
-      question: "¿Qué son los órganos?",
-      options: [
-        "Un conjunto de células iguales",
-        "Grupos de diversos tejidos que se especializan en llevar una tarea específica",
-        "La parte más pequeña del cuerpo",
-        "Un conjunto de sistemas"
-      ],
-      correct: 1,
-      explanation: "Los órganos son grupos de diversos tejidos que se especializan en llevar una tarea específica. Ejemplo: el corazón."
-    },
-    {
-      type: "multiple",
-      question: "¿Cuál es el orden CORRECTO del nivel de organización del cuerpo humano?",
-      options: [
-        "Organismo → Sistema → Órgano → Tejido → Célula",
-        "Célula → Tejido → Órgano → Sistema → Organismo",
-        "Tejido → Célula → Órgano → Organismo → Sistema",
-        "Sistema → Órgano → Célula → Tejido → Organismo"
-      ],
-      correct: 1,
-      explanation: "El orden correcto es: 1. CÉLULA → 2. TEJIDO → 3. ÓRGANO → 4. SISTEMA → 5. ORGANISMO (ser humano completo y vivo)."
-    },
+  // ----- TERRITORIO COSTARRICENSE -----
+  {
+    tipo: "seleccion",
+    tema: "🗺️ Territorio CR",
+    pregunta: "¿Cómo está constituido el territorio costarricense?",
+    opciones: [
+      "Solo territorio continental",
+      "Territorio marítimo y aéreo",
+      "Territorio marítimo, continental y aéreo",
+      "Solo territorio marítimo"
+    ],
+    correcta: 2,
+    explicacion: "El territorio de Costa Rica está formado por tres partes: marítimo, continental y aéreo. 🏞️"
+  },
+  {
+    tipo: "seleccion",
+    tema: "🗺️ Territorio CR",
+    pregunta: "¿Cuál es el territorio MÁS amplio de Costa Rica?",
+    opciones: ["El continental", "El aéreo", "El marítimo", "Las montañas"],
+    correcta: 2,
+    explicacion: "¡El marítimo! Es el territorio más extenso de nuestro país. 🌊"
+  },
+  {
+    tipo: "vf",
+    tema: "🗺️ Territorio CR",
+    pregunta: "El territorio continental son todas las tierras emergidas del país.",
+    correcta: true,
+    explicacion: "¡Sí! El territorio continental son todas las tierras emergidas (que están sobre el agua). 🌄"
+  },
+  {
+    tipo: "seleccion",
+    tema: "🗺️ Territorio CR",
+    pregunta: "Costa Rica limita por mar con:",
+    opciones: ["México y Guatemala", "Colombia, Panamá y Ecuador", "Perú y Chile", "Estados Unidos y Cuba"],
+    correcta: 1,
+    explicacion: "Costa Rica limita por mar con Colombia, Panamá y Ecuador. 🚢"
+  },
+  {
+    tipo: "completar",
+    tema: "🗺️ Territorio CR",
+    pregunta: "Por el norte, Costa Rica limita con el país de __________.",
+    respuestas: ["nicaragua"],
+    explicacion: "Costa Rica limita al norte con Nicaragua. 🇳🇮"
+  },
+  {
+    tipo: "seleccion",
+    tema: "🗺️ Territorio CR",
+    pregunta: "¿En qué zona climática se ubica Costa Rica?",
+    opciones: ["Zona polar", "Zona intertropical", "Zona templada", "Zona desértica"],
+    correcta: 1,
+    explicacion: "Costa Rica se ubica en la zona intertropical, entre los Trópicos de Cáncer y Capricornio. ☀️"
+  },
 
-    // ============ SECCIÓN 3: SISTEMA RESPIRATORIO ============
-    {
-      section: "Sistema Respiratorio",
-      type: "multiple",
-      question: "¿De qué se encarga el sistema respiratorio?",
-      options: [
-        "De bombear sangre a todo el cuerpo",
-        "De digerir los alimentos",
-        "De suministrar oxígeno al organismo y eliminar el dióxido de carbono",
-        "De sostener el cuerpo"
-      ],
-      correct: 2,
-      explanation: "El sistema respiratorio se encarga de suministrar el oxígeno al organismo y eliminar el dióxido de carbono."
-    },
-    {
-      type: "multiple",
-      question: "¿Cuál es la función de la LARINGE en el sistema respiratorio?",
-      options: [
-        "Permite la entrada de aire",
-        "Filtra el aire para que llegue a la tráquea",
-        "Transporta aire de la tráquea a los bronquios",
-        "Da oxígeno a la sangre"
-      ],
-      correct: 1,
-      explanation: "La laringe filtra el aire para que llegue a la tráquea."
-    },
-    {
-      type: "fill",
-      question: "Los _______ son los órganos donde la sangre separa el dióxido de carbono y recoge el oxígeno.",
-      correct: ["alveolos", "alvéolos"],
-      explanation: "En los alvéolos, la sangre separa el dióxido de carbono y recoge el oxígeno. Los pulmones después dan el oxígeno a la sangre."
-    },
-    {
-      type: "truefalse",
-      question: "Durante la INHALACIÓN, el diafragma se contrae y se aplana, se amplía el tórax y se crea un vacío que succiona el aire hacia los pulmones.",
-      correct: true,
-      explanation: "Correcto. En la inhalación, el organismo toma aire del medio: el diafragma se contrae y se aplana, el tórax se amplía y se crea un vacío que succiona el aire hacia los pulmones."
-    },
-    {
-      type: "multiple",
-      question: "¿Qué es el DIAFRAGMA?",
-      options: [
-        "Un órgano que produce oxígeno",
-        "Un hueso del tórax",
-        "Un músculo que separa la cavidad torácica de la abdominal",
-        "Una parte de los pulmones"
-      ],
-      correct: 2,
-      explanation: "El diafragma es un músculo que separa la cavidad torácica de la abdominal y ayuda en la inhalación y exhalación del aire."
-    },
-    {
-      type: "multiple",
-      question: "¿Qué enfermedad respiratoria se caracteriza por la contracción de bronquios y bronquiolos, dando sensación de ahogo?",
-      options: [
-        "Bronquitis",
-        "Neumonía",
-        "Asma",
-        "Laringitis"
-      ],
-      correct: 2,
-      explanation: "El ASMA se caracteriza porque se contraen los bronquios y bronquiolos y se da una sensación de ahogo."
-    },
-    {
-      type: "truefalse",
-      question: "La laringitis inflama los pulmones y produce fiebre.",
-      correct: false,
-      explanation: "Falso. La LARINGITIS inflama la laringe y produce afonía. Lo que inflama los pulmones y produce fiebre es la NEUMONÍA."
-    },
+  // ----- BIODIVERSIDAD Y VENTAJAS -----
+  {
+    tipo: "vf",
+    tema: "🌿 Biodiversidad",
+    pregunta: "Costa Rica es un puente biológico natural que alberga biodiversidad de América del Sur y América del Norte.",
+    correcta: true,
+    explicacion: "¡Correcto! Por eso tenemos tanta variedad de plantas y animales que atraen al turismo. 🦜🌺"
+  },
+  {
+    tipo: "seleccion",
+    tema: "🌿 Biodiversidad",
+    pregunta: "¿Por qué es bueno que Costa Rica tenga poca extensión territorial?",
+    opciones: [
+      "Porque hay menos personas",
+      "Porque se dura poco tiempo en movilizarse, favoreciendo el comercio y turismo",
+      "Porque hay menos animales",
+      "Porque cuesta menos hacer casas"
+    ],
+    correcta: 1,
+    explicacion: "¡Exacto! Al ser pequeño, es rápido moverse de un lugar a otro, lo que ayuda al comercio y al turismo. 🚌"
+  },
+  {
+    tipo: "seleccion",
+    tema: "🌿 Biodiversidad",
+    pregunta: "¿Cuál NO es una desventaja de la situación geográfica de Costa Rica?",
+    opciones: ["Terremotos y sismos", "Actividad volcánica", "Inundaciones y huracanes", "Mucha biodiversidad"],
+    correcta: 3,
+    explicacion: "¡Correcto! La biodiversidad es una VENTAJA, no una desventaja. Las desventajas son los desastres naturales. 🌋"
+  },
 
-    // ============ SECCIÓN 4: SISTEMA CIRCULATORIO ============
-    {
-      section: "Sistema Circulatorio",
-      type: "multiple",
-      question: "¿Cuáles son los órganos del sistema circulatorio?",
-      options: [
-        "Pulmones, tráquea y bronquios",
-        "El corazón, la sangre, los vasos sanguíneos y capilares",
-        "Estómago, intestinos e hígado",
-        "Cerebro, médula y nervios"
-      ],
-      correct: 1,
-      explanation: "El sistema circulatorio lo componen: el corazón, la sangre, los vasos sanguíneos y capilares."
-    },
-    {
-      type: "multiple",
-      question: "¿Cuáles son las CUATRO cavidades del corazón?",
-      options: [
-        "Vena cava, aorta, pulmonar y coronaria",
-        "Aurícula derecha, aurícula izquierda, ventrícula derecha y ventrícula izquierda",
-        "Sístole, diástole, arteria y vena",
-        "Atrio, ventrículo, tabique y válvula"
-      ],
-      correct: 1,
-      explanation: "Las cuatro cavidades del corazón son: aurícula derecha, aurícula izquierda, ventrícula derecha y ventrícula izquierda."
-    },
-    {
-      type: "multiple",
-      question: "¿Qué movimiento del corazón ocurre cuando se contrae y expulsa sangre?",
-      options: [
-        "Diástole",
-        "Sístole",
-        "Inhalación",
-        "Circulación"
-      ],
-      correct: 1,
-      explanation: "SÍSTOLE: cuando el corazón se contrae y expulsa sangre. DIÁSTOLE: cuando el corazón se relaja y ensancha para que ingrese sangre nueva."
-    },
-    {
-      type: "fill",
-      question: "Las _______ regresan la sangre que desecha el cuerpo al corazón.",
-      correct: ["venas"],
-      explanation: "Las venas regresan la sangre que desecha el cuerpo al corazón. Las arterias llevan sangre desde el corazón hasta los pulmones."
-    },
-    {
-      type: "truefalse",
-      question: "Los vasos capilares intercambian oxígeno, alimento y desechos con los tejidos.",
-      correct: true,
-      explanation: "Correcto. La función de los vasos capilares es intercambiar oxígeno, alimento y desechos con los tejidos."
-    },
+  // ----- CIUDADANÍA GLOBAL -----
+  {
+    tipo: "vf",
+    tema: "🌍 Ciudadanía Global",
+    pregunta: "Un aspecto positivo de la ciudadanía global es que podemos saber qué pasa en el resto del mundo.",
+    correcta: true,
+    explicacion: "¡Sí! La ciudadanía global nos ayuda a estar informados y crear conciencia mundial. 🌐"
+  },
+  {
+    tipo: "seleccion",
+    tema: "🌍 Ciudadanía Global",
+    pregunta: "¿Cuál es un aspecto NEGATIVO de la ciudadanía global?",
+    opciones: [
+      "Mayor acceso al conocimiento",
+      "Las grandes empresas tienen más poder que los gobiernos",
+      "Saber qué pasa en el mundo",
+      "Crear conciencia global"
+    ],
+    correcta: 1,
+    explicacion: "Un aspecto negativo es que las grandes empresas tienen más poder que los gobiernos. ⚖️"
+  },
 
-    // ============ SECCIÓN 5: LA SANGRE ============
-    {
-      section: "La Sangre y la Inmunidad",
-      type: "multiple",
-      question: "¿Cuál es la función de los GLÓBULOS BLANCOS (leucocitos)?",
-      options: [
-        "Transportar oxígeno a las células",
-        "Coagular la sangre",
-        "Fabricar anticuerpos para defender al cuerpo",
-        "Dar el color rojo a la sangre"
-      ],
-      correct: 2,
-      explanation: "Los glóbulos blancos (también llamados leucocitos) son células que SÍ tienen núcleo y se encargan de fabricar anticuerpos."
-    },
-    {
-      type: "multiple",
-      question: "¿Qué característica tienen los GLÓBULOS ROJOS?",
-      options: [
-        "Tienen núcleo y fabrican anticuerpos",
-        "NO tienen núcleo y poseen una proteína roja llamada hemoglobina",
-        "Realizan la coagulación de la sangre",
-        "Son líquidos amarillentos"
-      ],
-      correct: 1,
-      explanation: "Los glóbulos rojos (eritrocitos) son células que NO tienen núcleo y poseen una proteína roja llamada hemoglobina."
-    },
-    {
-      type: "fill",
-      question: "Las plaquetas, también llamadas _______, realizan la coagulación de la sangre.",
-      correct: ["trombocitos"],
-      explanation: "Las plaquetas (también llamadas trombocitos) no tienen núcleo y realizan la coagulación de la sangre."
-    },
-    {
-      type: "truefalse",
-      question: "El plasma es un líquido amarillento que transporta los glóbulos rojos y blancos, plaquetas, gases y nutrientes.",
-      correct: true,
-      explanation: "Correcto. El plasma es un líquido amarillento que transporta los glóbulos rojos y blancos, plaquetas, gases y nutrientes."
-    },
-    {
-      type: "multiple",
-      question: "¿Qué es la INMUNIDAD NATURAL?",
-      options: [
-        "La que se obtiene con vacunas",
-        "La que el organismo tiene al momento de nacer",
-        "La que se crea al enfrentarse a enfermedades",
-        "La que se transmite por transfusiones"
-      ],
-      correct: 1,
-      explanation: "La inmunidad natural es la que el organismo tiene al momento de nacer."
-    },
-    {
-      type: "multiple",
-      question: "La circulación MENOR de la sangre...",
-      options: [
-        "Inicia cuando la sangre oxigenada llega al corazón por la aurícula izquierda",
-        "Inicia cuando llega a la aurícula derecha por medio de las venas, regresa al corazón por las venas pulmonares y desemboca en la aurícula izquierda",
-        "Se encarga de llevar sangre a todos los órganos del cuerpo",
-        "Solo ocurre en los niños"
-      ],
-      correct: 1,
-      explanation: "La circulación menor inicia cuando la sangre llega a la aurícula derecha por medio de las venas, regresa al corazón por las venas pulmonares que desembocan en la aurícula izquierda."
-    }
-  ];
+  // ----- EVENTOS Y DESASTRES -----
+  {
+    tipo: "completar",
+    tema: "🌪️ Naturaleza",
+    pregunta: "Un __________ natural NO afecta al ser humano, pero un desastre natural SÍ lo afecta.",
+    respuestas: ["evento"],
+    explicacion: "Un EVENTO natural no afecta al ser humano, mientras que un desastre natural sí lo afecta. 🌊"
+  },
 
-  // ============ RENDER QUIZ ============
-  const quizContainer = document.getElementById('quiz');
-  const userAnswers = new Array(questions.length).fill(null);
-  let submitted = false;
+  // ----- ESTUDIOS SOCIALES -----
+  {
+    tipo: "seleccion",
+    tema: "📖 Estudios Sociales",
+    pregunta: "¿Qué son los Estudios Sociales?",
+    opciones: [
+      "Una materia para aprender matemáticas",
+      "La materia que ayuda a comprender cómo viven las personas, la historia y los deberes",
+      "Una clase de educación física",
+      "Una materia solo de geografía"
+    ],
+    correcta: 1,
+    explicacion: "Los Estudios Sociales nos ayudan a comprender cómo viven las personas, cómo se organizan, la historia y nuestros deberes y derechos. 📚"
+  },
+  {
+    tipo: "vf",
+    tema: "📖 Estudios Sociales",
+    pregunta: "Los Estudios Sociales nos enseñan valores como respeto, solidaridad y responsabilidad.",
+    correcta: true,
+    explicacion: "¡Muy bien! También nos ayudan a ser mejores ciudadanos. 🤝"
+  },
 
-  function renderQuiz() {
-    let html = '';
-    let currentSection = '';
+  // ----- AMÉRICA -----
+  {
+    tipo: "seleccion",
+    tema: "🌎 América",
+    pregunta: "Según los aspectos socioculturales, ¿en qué región se ubica Costa Rica?",
+    opciones: ["América Anglosajona", "América Latina o Latinoamérica", "Europa", "Asia"],
+    correcta: 1,
+    explicacion: "Costa Rica está en América Latina porque hablamos español y somos en su mayoría católicos. 🇨🇷"
+  },
+  {
+    tipo: "completar",
+    tema: "🌎 América",
+    pregunta: "América se divide en tres regiones: América del Norte, América Central y América del __________.",
+    respuestas: ["sur", "sud"],
+    explicacion: "América se divide en: América del Norte, América Central y América del Sur (Suramérica). 🗺️"
+  },
 
-    questions.forEach((q, idx) => {
-      if (q.section && q.section !== currentSection) {
-        currentSection = q.section;
-        html += `<div class="section-divider"><span class="section-divider-text">${q.section}</span></div>`;
-      }
+  // ----- BATALLA DE SANTA ROSA -----
+  {
+    tipo: "seleccion",
+    tema: "⚔️ Batalla Santa Rosa",
+    pregunta: "¿Dónde ocurrió la Batalla de Santa Rosa?",
+    opciones: [
+      "En San José",
+      "En la Hacienda Santa Rosa, Guanacaste",
+      "En Limón",
+      "En Cartago"
+    ],
+    correcta: 1,
+    explicacion: "La Batalla ocurrió en la Hacienda Santa Rosa, en Guanacaste, una zona estratégica entre Costa Rica y Nicaragua. 🏚️"
+  },
+  {
+    tipo: "completar",
+    tema: "⚔️ Batalla Santa Rosa",
+    pregunta: "La Batalla de Santa Rosa ocurrió el 20 de marzo de __________.",
+    respuestas: ["1856"],
+    explicacion: "¡Correcto! Fue el 20 de marzo de 1856, durante la Campaña Nacional. 📅"
+  },
+  {
+    tipo: "seleccion",
+    tema: "⚔️ Batalla Santa Rosa",
+    pregunta: "¿Quién era el presidente de Costa Rica durante la Batalla de Santa Rosa?",
+    opciones: ["Juan Santamaría", "William Walker", "Juan Rafael Mora Porras", "Óscar Arias"],
+    correcta: 2,
+    explicacion: "El presidente era Juan Rafael Mora Porras, quien envió al ejército a defender el país. 👨‍💼"
+  },
+  {
+    tipo: "vf",
+    tema: "⚔️ Batalla Santa Rosa",
+    pregunta: "Los filibusteros, liderados por William Walker, querían controlar Centroamérica y extender la esclavitud.",
+    correcta: true,
+    explicacion: "¡Correcto! Por eso era importante detenerlos en Santa Rosa. 🛡️"
+  },
+  {
+    tipo: "seleccion",
+    tema: "⚔️ Batalla Santa Rosa",
+    pregunta: "¿Cuánto duró la Batalla de Santa Rosa?",
+    opciones: ["Varios días", "Una semana", "Apenas unos minutos", "Un mes completo"],
+    correcta: 2,
+    explicacion: "¡La batalla fue muy corta, duró apenas unos minutos! 🕐"
+  },
 
-      const typeLabel = {
-        'multiple': 'Opción múltiple',
-        'truefalse': 'Verdadero / Falso',
-        'fill': 'Completar'
-      }[q.type];
+  // ----- BATALLA DE RIVAS -----
+  {
+    tipo: "completar",
+    tema: "🏛️ Batalla de Rivas",
+    pregunta: "El héroe nacional de la Batalla de Rivas fue Juan __________.",
+    respuestas: ["santamaria", "santamaría"],
+    explicacion: "¡Juan Santamaría! Nuestro héroe nacional que quemó el mesón de guerra. 🔥"
+  },
+  {
+    tipo: "seleccion",
+    tema: "🏛️ Batalla de Rivas",
+    pregunta: "¿Cuándo se dio la Batalla de Rivas?",
+    opciones: [
+      "20 de marzo de 1856",
+      "11 de abril de 1856",
+      "15 de septiembre de 1821",
+      "1 de enero de 1900"
+    ],
+    correcta: 1,
+    explicacion: "La Batalla de Rivas fue el 11 de abril de 1856, en Rivas, Nicaragua. 🇳🇮"
+  },
+  {
+    tipo: "vf",
+    tema: "🏛️ Batalla de Rivas",
+    pregunta: "En la Batalla de Rivas, las milicias costarricenses derrotaron a William Walker al quemar el mesón de guerra.",
+    correcta: true,
+    explicacion: "¡Sí! Reafirmaron la soberanía nacional con esa gran victoria. 🎖️"
+  }
+];
 
-      html += `<div class="question-card" id="q-${idx}">
-        <div class="question-number">Pregunta ${idx + 1}</div>
-        <div class="question-type">${typeLabel}</div>
-        <div class="question-text">${q.question}</div>`;
+// ============== ESTADO ==============
+let preguntaActual = 0;
+let puntos = 0;
+let aciertos = 0;
+let errores = 0;
+const PUNTOS_POR_PREGUNTA = 5;
 
-      if (q.type === 'multiple') {
-        html += '<div class="options">';
-        q.options.forEach((opt, optIdx) => {
-          const letter = String.fromCharCode(65 + optIdx);
-          html += `<label class="option" onclick="selectOption(${idx}, ${optIdx})">
-            <input type="radio" name="q${idx}" value="${optIdx}">
-            <div class="option-marker">${letter}</div>
-            <span>${opt}</span>
-          </label>`;
-        });
-        html += '</div>';
-      } else if (q.type === 'truefalse') {
-        html += '<div class="options">';
-        ['Verdadero', 'Falso'].forEach((opt, optIdx) => {
-          const emoji = optIdx === 0 ? '✓' : '✗';
-          html += `<label class="option" onclick="selectOption(${idx}, ${optIdx === 0})">
-            <input type="radio" name="q${idx}" value="${optIdx === 0}">
-            <div class="option-marker">${emoji}</div>
-            <span>${opt}</span>
-          </label>`;
-        });
-        html += '</div>';
-      } else if (q.type === 'fill') {
-        html += `<input type="text" class="fill-input" placeholder="Escribí tu respuesta aquí..." oninput="updateFill(${idx}, this.value)" id="fill-${idx}">`;
-      }
+// ============== FUNCIONES ==============
+function iniciar(){
+  document.getElementById('intro').style.display = 'none';
+  document.getElementById('progresoWrap').classList.add('activo');
+  document.getElementById('numTotal').textContent = preguntas.length;
+  preguntaActual = 0;
+  puntos = 0;
+  aciertos = 0;
+  errores = 0;
+  mostrarPregunta();
+}
 
-      html += `<div class="feedback" id="feedback-${idx}"></div>`;
-      html += `</div>`;
+function mostrarPregunta(){
+  const cont = document.getElementById('contenedorPreguntas');
+  cont.innerHTML = '';
+
+  if(preguntaActual >= preguntas.length){
+    mostrarResultado();
+    return;
+  }
+
+  const p = preguntas[preguntaActual];
+
+  // Actualizar progreso
+  document.getElementById('numActual').textContent = preguntaActual + 1;
+  document.getElementById('puntosActuales').textContent = puntos;
+  const pct = ((preguntaActual) / preguntas.length) * 100;
+  document.getElementById('progresoFill').style.width = pct + '%';
+
+  // Crear card
+  const card = document.createElement('div');
+  card.className = 'pregunta-card activa';
+
+  let badgeClase = '';
+  let badgeTexto = '';
+  if(p.tipo === 'seleccion'){ badgeClase = ''; badgeTexto = '📝 Selección'; }
+  if(p.tipo === 'vf'){ badgeClase = 'vf'; badgeTexto = '✓✗ Verdadero o Falso'; }
+  if(p.tipo === 'completar'){ badgeClase = 'completar'; badgeTexto = '✏️ Completar'; }
+
+  let html = `
+    <div class="badge-tipo ${badgeClase}">${p.tema} · ${badgeTexto}</div>
+    <div class="pregunta-texto">${p.pregunta}</div>
+  `;
+
+  if(p.tipo === 'seleccion'){
+    html += '<div class="opciones">';
+    const letras = ['A', 'B', 'C', 'D'];
+    p.opciones.forEach((op, i) => {
+      html += `<button class="opcion" data-idx="${i}" onclick="responderSeleccion(${i})">
+        <span class="letra">${letras[i]}</span>
+        <span>${op}</span>
+      </button>`;
     });
-
-    quizContainer.innerHTML = html;
+    html += '</div>';
   }
 
-  function selectOption(qIdx, value) {
-    if (submitted) return;
-    userAnswers[qIdx] = value;
-
-    // update UI
-    const card = document.getElementById(`q-${qIdx}`);
-    card.querySelectorAll('.option').forEach((opt, i) => {
-      const q = questions[qIdx];
-      if (q.type === 'multiple') {
-        opt.classList.toggle('selected', i === value);
-      } else if (q.type === 'truefalse') {
-        opt.classList.toggle('selected', (i === 0) === value);
-      }
-    });
-    card.classList.add('answered');
-    updateProgress();
+  if(p.tipo === 'vf'){
+    html += `
+      <div class="opciones">
+        <button class="opcion" data-idx="true" onclick="responderVF(true)">
+          <span class="letra">✓</span>
+          <span>Verdadero</span>
+        </button>
+        <button class="opcion" data-idx="false" onclick="responderVF(false)">
+          <span class="letra">✗</span>
+          <span>Falso</span>
+        </button>
+      </div>
+    `;
   }
 
-  function updateFill(qIdx, value) {
-    if (submitted) return;
-    userAnswers[qIdx] = value.trim();
-    const card = document.getElementById(`q-${qIdx}`);
-    if (value.trim() !== '') {
-      card.classList.add('answered');
-    } else {
-      card.classList.remove('answered');
-    }
-    updateProgress();
+  if(p.tipo === 'completar'){
+    html += `
+      <input type="text" class="input-completar" id="inputResp" placeholder="Escribe tu respuesta aquí..." autocomplete="off" />
+      <br>
+      <button class="btn-comprobar" id="btnComprobar" onclick="responderCompletar()">✅ Comprobar</button>
+    `;
   }
 
-  function updateProgress() {
-    const answered = userAnswers.filter(a => a !== null && a !== '').length;
-    const percent = (answered / questions.length) * 100;
-    document.getElementById('progressFill').style.width = `${percent}%`;
-    document.getElementById('progressCount').textContent = answered;
+  html += `
+    <div class="feedback" id="feedback"></div>
+    <button class="btn-siguiente" id="btnSiguiente" onclick="siguiente()">Siguiente ➡️</button>
+  `;
 
-    const btn = document.getElementById('submitBtn');
-    const hint = document.getElementById('submitHint');
-    if (answered === questions.length) {
-      btn.disabled = false;
-      hint.textContent = '¡Listo! Podés enviar tus respuestas 🚀';
-    } else {
-      btn.disabled = true;
-      hint.textContent = `Te faltan ${questions.length - answered} pregunta${questions.length - answered !== 1 ? 's' : ''} por responder`;
-    }
-  }
+  card.innerHTML = html;
+  cont.appendChild(card);
 
-  function normalizeAnswer(str) {
-    return str.toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .trim();
-  }
-
-  function checkAnswer(qIdx) {
-    const q = questions[qIdx];
-    const user = userAnswers[qIdx];
-    if (q.type === 'multiple' || q.type === 'truefalse') {
-      return user === q.correct;
-    } else if (q.type === 'fill') {
-      if (!user) return false;
-      const userNorm = normalizeAnswer(user);
-      return q.correct.some(c => normalizeAnswer(c) === userNorm);
-    }
-    return false;
-  }
-
-  function submitQuiz() {
-    submitted = true;
-    let score = 0;
-
-    questions.forEach((q, idx) => {
-      const isCorrect = checkAnswer(idx);
-      if (isCorrect) score++;
-
-      const card = document.getElementById(`q-${idx}`);
-      const feedback = document.getElementById(`feedback-${idx}`);
-
-      // disable interaction
-      card.style.pointerEvents = 'none';
-      card.querySelectorAll('input').forEach(inp => inp.disabled = true);
-
-      // mark options
-      if (q.type === 'multiple') {
-        card.querySelectorAll('.option').forEach((opt, i) => {
-          opt.classList.remove('selected');
-          if (i === q.correct) opt.classList.add('correct-answer');
-          if (i === userAnswers[idx] && i !== q.correct) opt.classList.add('wrong-answer');
+  // Permitir Enter para completar
+  if(p.tipo === 'completar'){
+    setTimeout(() => {
+      const input = document.getElementById('inputResp');
+      if(input){
+        input.focus();
+        input.addEventListener('keypress', (e) => {
+          if(e.key === 'Enter') responderCompletar();
         });
-      } else if (q.type === 'truefalse') {
-        card.querySelectorAll('.option').forEach((opt, i) => {
-          opt.classList.remove('selected');
-          const isTrueOpt = i === 0;
-          if (isTrueOpt === q.correct) opt.classList.add('correct-answer');
-          if (isTrueOpt === userAnswers[idx] && isTrueOpt !== q.correct) opt.classList.add('wrong-answer');
-        });
-      } else if (q.type === 'fill') {
-        const input = document.getElementById(`fill-${idx}`);
-        input.style.borderColor = isCorrect ? 'var(--success)' : 'var(--accent)';
-        input.style.background = isCorrect ? '#e8f5f2' : '#fde8e8';
       }
+    }, 100);
+  }
+}
 
-      // feedback
-      feedback.className = `feedback show ${isCorrect ? 'correct' : 'incorrect'}`;
-      let correctAnswerText = '';
-      if (q.type === 'multiple') correctAnswerText = q.options[q.correct];
-      else if (q.type === 'truefalse') correctAnswerText = q.correct ? 'Verdadero' : 'Falso';
-      else if (q.type === 'fill') correctAnswerText = q.correct[0];
+function responderSeleccion(idx){
+  const p = preguntas[preguntaActual];
+  const botones = document.querySelectorAll('.opcion');
+  botones.forEach(b => b.disabled = true);
 
-      feedback.innerHTML = `
-        <div class="feedback-title">
-          ${isCorrect ? '✓ ¡Correcto!' : '✗ Incorrecto'}
-        </div>
-        ${!isCorrect ? `<div class="feedback-answer">Respuesta correcta: <strong>${correctAnswerText}</strong></div>` : ''}
-        <div class="feedback-explanation">💡 ${q.explanation}</div>
-      `;
-    });
+  if(idx === p.correcta){
+    botones[idx].classList.add('correcta');
+    acierto(p.explicacion);
+  } else {
+    botones[idx].classList.add('incorrecta');
+    botones[p.correcta].classList.add('correcta');
+    error(`La respuesta correcta era: <strong>${p.opciones[p.correcta]}</strong><br>${p.explicacion}`);
+  }
+}
 
-    // show results
-    const results = document.getElementById('results');
-    const scoreNum = document.getElementById('scoreNumber');
-    const percent = document.getElementById('percentage');
-    const title = document.getElementById('resultsTitle');
-    const emoji = document.getElementById('resultsEmoji');
-    const message = document.getElementById('resultsMessage');
+function responderVF(valor){
+  const p = preguntas[preguntaActual];
+  const botones = document.querySelectorAll('.opcion');
+  botones.forEach(b => b.disabled = true);
 
-    scoreNum.textContent = score;
-    const pct = Math.round((score / questions.length) * 100);
-    percent.textContent = `${pct}%`;
+  const idxElegido = valor ? 0 : 1;
+  const idxCorrecto = p.correcta ? 0 : 1;
 
-    if (pct >= 90) {
-      emoji.textContent = '🏆';
-      title.textContent = '¡Excelente trabajo!';
-      message.textContent = 'Dominás perfectamente el tema del cuerpo humano. ¡Seguí así!';
-    } else if (pct >= 75) {
-      emoji.textContent = '🎉';
-      title.textContent = '¡Muy bien!';
-      message.textContent = 'Tenés un buen dominio del tema. Repasá las preguntas que fallaste para reforzar.';
-    } else if (pct >= 60) {
-      emoji.textContent = '👍';
-      title.textContent = 'Buen intento';
-      message.textContent = 'Vas por buen camino. Revisá las explicaciones de las preguntas incorrectas y volvé a intentarlo.';
-    } else {
-      emoji.textContent = '📚';
-      title.textContent = 'Seguí estudiando';
-      message.textContent = 'Este es un buen momento para repasar la materia. Leé las explicaciones abajo y volvé a intentarlo.';
-    }
+  if(valor === p.correcta){
+    botones[idxElegido].classList.add('correcta');
+    acierto(p.explicacion);
+  } else {
+    botones[idxElegido].classList.add('incorrecta');
+    botones[idxCorrecto].classList.add('correcta');
+    error(`La respuesta correcta era: <strong>${p.correcta ? 'Verdadero' : 'Falso'}</strong><br>${p.explicacion}`);
+  }
+}
 
-    results.classList.add('show');
-    document.getElementById('submitBtn').style.display = 'none';
-    document.getElementById('submitHint').style.display = 'none';
+function responderCompletar(){
+  const p = preguntas[preguntaActual];
+  const input = document.getElementById('inputResp');
+  const respUsuario = input.value.trim().toLowerCase();
 
-    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if(!respUsuario){
+    input.style.borderColor = 'var(--rojo)';
+    input.focus();
+    return;
   }
 
-  function scrollToFirst() {
-    document.getElementById('q-0').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  input.disabled = true;
+  document.getElementById('btnComprobar').disabled = true;
+
+  // Comparación flexible (sin tildes ni mayúsculas)
+  const normalizar = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  const respNorm = normalizar(respUsuario);
+  const acertado = p.respuestas.some(r => normalizar(r) === respNorm);
+
+  if(acertado){
+    input.style.borderColor = 'var(--verde)';
+    input.style.background = '#D4F1DD';
+    acierto(p.explicacion);
+  } else {
+    input.style.borderColor = 'var(--rojo)';
+    input.style.background = '#FFD6D6';
+    const correctaTexto = p.respuestas[0].charAt(0).toUpperCase() + p.respuestas[0].slice(1);
+    error(`La respuesta correcta era: <strong>${correctaTexto}</strong><br>${p.explicacion}`);
+  }
+}
+
+function acierto(explicacion){
+  puntos += PUNTOS_POR_PREGUNTA;
+  aciertos++;
+  document.getElementById('puntosActuales').textContent = puntos;
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback bien activo';
+  fb.innerHTML = `<strong>🎉 ¡Muy bien! ¡Correcto!</strong>${explicacion}`;
+  document.getElementById('btnSiguiente').classList.add('visible');
+  miniConfeti();
+}
+
+function error(mensaje){
+  errores++;
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback mal activo';
+  fb.innerHTML = `<strong>😕 ¡Casi! No te preocupes, sigue intentando.</strong>${mensaje}`;
+  document.getElementById('btnSiguiente').classList.add('visible');
+}
+
+function siguiente(){
+  preguntaActual++;
+  mostrarPregunta();
+}
+
+function mostrarResultado(){
+  document.getElementById('progresoFill').style.width = '100%';
+  document.getElementById('contenedorPreguntas').innerHTML = '';
+  const res = document.getElementById('resultado');
+  res.classList.add('activo');
+
+  const max = preguntas.length * PUNTOS_POR_PREGUNTA;
+  const pct = (puntos / max) * 100;
+
+  document.getElementById('puntajeFinal').textContent = puntos;
+  document.getElementById('puntajeMax').textContent = max;
+  document.getElementById('aciertos').textContent = aciertos;
+  document.getElementById('errores').textContent = errores;
+
+  let emoji, titulo, mensaje;
+  if(pct === 100){
+    emoji = '🏆'; titulo = '¡PERFECTO! ¡Eres un genio!';
+    mensaje = 'Respondiste TODAS las preguntas correctamente. ¡Estás más que listo/a para tu examen! 🌟';
+    granConfeti();
+  } else if(pct >= 80){
+    emoji = '🎉'; titulo = '¡Excelente trabajo!';
+    mensaje = '¡Felicidades Teticu! Tienes muy buen dominio del tema. Repasa lo que fallaste y estarás perfecto/a. 💪';
+    granConfeti();
+  } else if(pct >= 60){
+    emoji = '👍'; titulo = '¡Buen trabajo Teticu!';
+    mensaje = 'Vas por buen camino. Repasa los temas donde tuviste errores y vuelve a intentarlo. 📖';
+  } else if(pct >= 40){
+    emoji = '📚'; titulo = '¡Sigue practicando Teticu!';
+    mensaje = 'Necesitas estudiar un poquito más. ¡No te rindas! Lee de nuevo el material y vuelve a intentarlo. 💡';
+  } else {
+    emoji = '💪'; titulo = '¡Tú puedes Teticu!';
+    mensaje = 'No te desanimes. Repasa bien la materia y vuelve a intentar. ¡Cada intento te hace mejor! 🌱';
   }
 
-  function resetQuiz() {
-    submitted = false;
-    userAnswers.fill(null);
-    document.getElementById('results').classList.remove('show');
-    document.getElementById('submitBtn').style.display = 'inline-block';
-    document.getElementById('submitHint').style.display = 'block';
-    renderQuiz();
-    updateProgress();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  document.getElementById('emojiResultado').textContent = emoji;
+  document.getElementById('tituloResultado').textContent = titulo;
+  document.getElementById('mensajeFinal').textContent = mensaje;
 
-  // INIT
-  renderQuiz();
-  updateProgress();
+  document.getElementById('progresoWrap').classList.remove('activo');
+
+  res.scrollIntoView({behavior: 'smooth'});
+}
+
+function reiniciar(){
+  document.getElementById('resultado').classList.remove('activo');
+  document.getElementById('contenedorPreguntas').innerHTML = '';
+  document.getElementById('intro').style.display = 'block';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// ============== CONFETI ==============
+function miniConfeti(){
+  const colores = ['#FFD23F','#43AA8B','#0094D9','#E63946','#9B5DE5','#FF9F1C'];
+  for(let i=0; i<20; i++){
+    crearConfeti(colores[Math.floor(Math.random()*colores.length)]);
+  }
+}
+function granConfeti(){
+  const colores = ['#FFD23F','#43AA8B','#0094D9','#E63946','#9B5DE5','#FF9F1C','#FF8FA3'];
+  for(let i=0; i<100; i++){
+    setTimeout(() => crearConfeti(colores[Math.floor(Math.random()*colores.length)]), i*30);
+  }
+}
+function crearConfeti(color){
+  const c = document.createElement('div');
+  c.className = 'confeti';
+  c.style.left = Math.random()*100 + 'vw';
+  c.style.background = color;
+  c.style.animationDuration = (Math.random()*2 + 2) + 's';
+  c.style.transform = `rotate(${Math.random()*360}deg)`;
+  if(Math.random() > 0.5){
+    c.style.borderRadius = '50%';
+  }
+  document.body.appendChild(c);
+  setTimeout(() => c.remove(), 5000);
+}
 </script>
 
 </body>
