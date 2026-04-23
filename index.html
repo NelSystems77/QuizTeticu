@@ -3,1144 +3,907 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>🇨🇷 Cuestionario de Estudios Sociales - 4to Año</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#FF6B35" />
+<title>¡A practicar Español! 🎒</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --azul:#1976D2;
-    --azul-oscuro:#0D47A1;
-    --azul-fuerte:#003D80;
-    --rojo:#D32F2F;
-    --rojo-oscuro:#8B0000;
-    --amarillo:#FFC107;
-    --amarillo-oscuro:#FF8F00;
-    --verde:#2E7D32;
-    --verde-claro:#81C784;
-    --crema:#FFFBF0;
-    --rosa:#EC407A;
-    --morado:#7B1FA2;
-    --naranja:#F57C00;
-    --texto:#1A1A2E;
-    --texto-suave:#3D3D5C;
-    --sombra: 0 6px 0 rgba(0,0,0,.15);
+    --bg:#FFF8EC;
+    --ink:#1F1A3A;
+    --accent:#FF6B35;
+    --accent-2:#FFB830;
+    --good:#2BB673;
+    --bad:#E74C3C;
+    --blue:#4A90E2;
+    --purple:#8E4BD1;
+    --card:#FFFFFF;
+    --shadow: 6px 6px 0 var(--ink);
+    --shadow-sm: 3px 3px 0 var(--ink);
+    --radius: 18px;
+    --radius-sm: 12px;
   }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{overscroll-behavior:none}
+  body{
+    font-family:'Nunito',system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    min-height:100vh;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(255,184,48,.25) 0 18px, transparent 19px),
+      radial-gradient(circle at 88% 22%, rgba(74,144,226,.22) 0 14px, transparent 15px),
+      radial-gradient(circle at 15% 92%, rgba(142,75,209,.22) 0 16px, transparent 17px),
+      radial-gradient(circle at 85% 78%, rgba(43,182,115,.22) 0 12px, transparent 13px);
+    background-attachment:fixed;
+    padding:14px 14px 120px;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:800;line-height:1.1;letter-spacing:-.5px}
 
-*{box-sizing:border-box; margin:0; padding:0;}
+/* ====== HEADER ====== */
+.topbar{
+position:sticky;top:10px;z-index:40;
+background:var(–ink);color:var(–bg);
+border-radius:var(–radius);
+padding:12px 14px;
+box-shadow:var(–shadow);
+display:flex;align-items:center;gap:12px;
+margin-bottom:16px;
+}
+.topbar .emoji{font-size:28px}
+.topbar .title{font-family:‘Fraunces’,serif;font-size:18px;font-weight:800}
+.topbar .score{margin-left:auto;background:var(–accent-2);color:var(–ink);
+padding:6px 12px;border-radius:999px;font-weight:800;font-size:14px;
+border:2px solid var(–ink);box-shadow:2px 2px 0 var(–bg)}
 
-body{
-font-family:‘Nunito’, ‘Trebuchet MS’, Verdana, sans-serif;
-background:
-radial-gradient(circle at 10% 20%, rgba(255,193,7,.2) 0%, transparent 40%),
-radial-gradient(circle at 90% 80%, rgba(123,31,162,.15) 0%, transparent 40%),
-radial-gradient(circle at 50% 50%, rgba(46,125,50,.12) 0%, transparent 50%),
-linear-gradient(180deg, #FFF8E1 0%, #FFE0B2 100%);
-min-height:100vh;
-color:var(–texto);
-padding:20px 15px 60px;
-background-attachment: fixed;
-font-weight:600;
+/* ====== HERO ====== */
+.hero{
+background:var(–accent);
+color:white;
+border:3px solid var(–ink);
+border-radius:var(–radius);
+padding:22px 18px;
+box-shadow:var(–shadow);
+position:relative;overflow:hidden;
+margin-bottom:18px;
 }
+.hero::before{
+content:’’;position:absolute;inset:auto -30px -40px auto;
+width:180px;height:180px;border-radius:50%;background:var(–accent-2);
+opacity:.45;
+}
+.hero h1{font-size:32px;margin-bottom:8px;position:relative}
+.hero p{font-weight:600;position:relative;font-size:15px}
+.hero .pill{display:inline-block;background:white;color:var(–ink);
+padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800;
+margin-top:10px;border:2px solid var(–ink)}
 
-body::before{
-content:””;
-position:fixed;
-inset:0;
-background-image:
-radial-gradient(circle at 20px 20px, rgba(25,118,210,.1) 2px, transparent 2px),
-radial-gradient(circle at 60px 60px, rgba(211,47,47,.1) 2px, transparent 2px);
-background-size: 80px 80px;
-pointer-events:none;
-z-index:0;
-}
-
-.container{
-max-width:880px;
-margin:0 auto;
-position:relative;
-z-index:1;
-}
-
-/* ===== HEADER ===== */
-header{
-text-align:center;
-background: linear-gradient(135deg, #003D80 0%, #1B5E20 100%);
-padding: 35px 25px 30px;
-border-radius: 30px;
-box-shadow: 0 10px 0 rgba(0,61,128,.4), 0 15px 40px rgba(0,0,0,.2);
-margin-bottom:30px;
-position:relative;
-overflow:hidden;
-border: 5px solid white;
-}
-header::before{
-content:“⭐”;
-position:absolute;
-top:15px; left:20px;
-font-size:32px;
-animation: girar 8s linear infinite;
-}
-header::after{
-content:“🌟”;
-position:absolute;
-bottom:15px; right:20px;
-font-size:32px;
-animation: girar 6s linear infinite reverse;
-}
-@keyframes girar { to { transform: rotate(360deg); } }
-
-header h1{
-font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
-font-size: clamp(26px, 6vw, 42px);
-color:#FFFFFF;
-text-shadow:
-2px 2px 0 #8B0000,
-4px 4px 0 rgba(0,0,0,.4);
-line-height:1.2;
-margin-bottom:14px;
-font-weight:800;
-letter-spacing: .5px;
-}
-header .sub{
-color:#FFFFFF;
-font-size:17px;
-font-weight:800;
-background: rgba(0,0,0,.45);
-display:inline-block;
-padding: 8px 22px;
-border-radius: 20px;
-border: 2px solid rgba(255,255,255,.6);
-letter-spacing: .5px;
-}
-
-/* ===== INTRO PANEL ===== */
-.intro{
-background:white;
-border-radius:25px;
-padding:25px 22px;
-margin-bottom:25px;
-box-shadow: var(–sombra);
-border: 4px dashed var(–amarillo-oscuro);
-text-align:center;
-}
-.intro h2{
-color:var(–rojo);
-font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
-font-size:26px;
-margin-bottom:14px;
-font-weight:800;
-}
-.intro p{
-font-size:17px;
-line-height:1.5;
-margin-bottom:10px;
-color: var(–texto);
-font-weight:600;
-}
-.intro p strong{
-color: var(–azul-oscuro);
-font-weight:800;
-}
-.intro .temas{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-justify-content:center;
-margin-top:20px;
-margin-bottom:5px;
-}
-.tema-chip{
-color: #1A1A2E;
-padding: 8px 16px;
-border-radius: 20px;
-font-size:14px;
-font-weight:800;
-border: 2px solid;
-}
-.tema-chip.c1{ background:#FFE082; border-color:#FF8F00; box-shadow: 0 3px 0 #FF8F00; }
-.tema-chip.c2{ background:#A5D6A7; border-color:#2E7D32; box-shadow: 0 3px 0 #2E7D32; color:#1B3A1F; }
-.tema-chip.c3{ background:#90CAF9; border-color:#0D47A1; box-shadow: 0 3px 0 #0D47A1; color:#0A2540; }
-.tema-chip.c4{ background:#F48FB1; border-color:#AD1457; box-shadow: 0 3px 0 #AD1457; color:#FFFFFF; }
-.tema-chip.c5{ background:#CE93D8; border-color:#6A1B9A; box-shadow: 0 3px 0 #6A1B9A; color:#FFFFFF; }
-.tema-chip.c6{ background:#FFAB91; border-color:#BF360C; box-shadow: 0 3px 0 #BF360C; color:#3E2723; }
-.tema-chip.c7{ background:#80DEEA; border-color:#00695C; box-shadow: 0 3px 0 #00695C; color:#003D33; }
-
-.btn-empezar{
-background: linear-gradient(135deg, #D32F2F, #F57C00);
-color:#FFFFFF;
-border:none;
-padding: 16px 40px;
-font-size: 22px;
-font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
-font-weight:800;
-border-radius: 50px;
-cursor: pointer;
-margin-top:20px;
-box-shadow: 0 6px 0 #8B0000, 0 10px 20px rgba(211,47,47,.4);
-transition: all .15s ease;
-letter-spacing: 1px;
-text-shadow: 1px 1px 0 rgba(0,0,0,.4);
-}
-.btn-empezar:hover{
-transform: translateY(-2px);
-box-shadow: 0 8px 0 #8B0000, 0 12px 25px rgba(211,47,47,.5);
-}
-.btn-empezar:active{
-transform: translateY(4px);
-box-shadow: 0 2px 0 #8B0000;
-}
-
-/* ===== PROGRESS ===== */
-.progreso-wrap{
-display:none;
-background:white;
-border-radius: 20px;
-padding: 15px 20px;
-margin-bottom:20px;
-box-shadow: var(–sombra);
-border: 3px solid var(–azul);
-}
-.progreso-wrap.activo{ display:block; animation: aparecer .4s ease; }
-.progreso-info{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:8px;
-font-weight:800;
-}
-.progreso-info .pregunta-num{
-color:var(–azul-oscuro);
-font-size:16px;
-}
-.progreso-info .puntos{
-background: var(–amarillo);
-padding: 5px 14px;
-border-radius: 15px;
-color: var(–texto);
-font-size:15px;
-border: 2px solid var(–amarillo-oscuro);
-}
-.progreso-bar{
-width:100%;
-height: 16px;
-background: #E0E0E0;
-border-radius: 10px;
-overflow:hidden;
-border: 2px solid var(–texto);
-}
-.progreso-fill{
-height:100%;
-background: linear-gradient(90deg, var(–verde), var(–amarillo));
-width:0%;
-transition: width .5s ease;
-border-radius: 8px;
-}
-
-/* ===== PREGUNTA ===== */
-.pregunta-card{
-display:none;
-background:white;
-border-radius: 25px;
-padding: 25px 22px;
-box-shadow: var(–sombra);
-border: 4px solid var(–morado);
-animation: aparecer .5s ease;
-margin-bottom:20px;
-}
-.pregunta-card.activa{ display:block; }
-
-@keyframes aparecer{
-from { opacity:0; transform: translateY(20px) scale(.97); }
-to { opacity:1; transform: translateY(0) scale(1); }
-}
-
-.badge-tipo{
-display:inline-block;
-background: var(–morado);
-color:#FFFFFF;
-padding: 6px 14px;
-border-radius: 15px;
-font-size:13px;
-font-weight:800;
-margin-bottom:14px;
-text-transform: uppercase;
-letter-spacing: .5px;
-border: 2px solid #4A148C;
-}
-.badge-tipo.vf{ background: var(–naranja); border-color:#BF360C; }
-.badge-tipo.completar{ background: var(–verde); border-color:#1B5E20; }
-
-.pregunta-texto{
-font-size: 19px;
-font-weight:800;
-color: var(–azul-oscuro);
-line-height:1.4;
-margin-bottom:20px;
-}
-
-.opciones{
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-.opcion{
-background: var(–crema);
-border: 3px solid #BBB;
-border-radius: 18px;
-padding: 14px 18px;
+/* ====== MENÚ DE TEMAS ====== */
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.tile{
+background:var(–card);
+border:3px solid var(–ink);
+border-radius:var(–radius);
+padding:14px 12px;
+box-shadow:var(–shadow-sm);
 cursor:pointer;
-font-size: 16px;
-font-weight:700;
+transition:transform .12s ease, box-shadow .12s ease;
 text-align:left;
-transition: all .2s ease;
-display:flex;
-align-items:center;
-gap:12px;
-font-family: inherit;
-color: var(–texto);
+font-family:inherit;color:inherit;
 }
-.opcion:hover:not(:disabled){
-border-color: var(–azul);
-background: #E3F2FD;
-transform: translateX(4px);
-}
-.opcion .letra{
-background: var(–azul);
-color:#FFFFFF;
-width: 34px;
-height:34px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:800;
-flex-shrink:0;
-font-size:16px;
-border: 2px solid var(–azul-oscuro);
-}
-.opcion.correcta{
-border-color: var(–verde);
-background: #C8E6C9;
-animation: brincar .5s ease;
-color: #1B5E20;
-}
-.opcion.correcta .letra{ background: var(–verde); border-color:#1B5E20; }
-.opcion.incorrecta{
-border-color: var(–rojo);
-background: #FFCDD2;
-animation: temblar .5s ease;
-color: #B71C1C;
-}
-.opcion.incorrecta .letra{ background: var(–rojo); border-color:#8B0000; }
-.opcion:disabled{ cursor: not-allowed; opacity:.95; }
+.tile:active{transform:translate(3px,3px);box-shadow:0 0 0 var(–ink)}
+.tile .icon{font-size:30px;display:block;margin-bottom:6px}
+.tile h3{font-size:15px;margin-bottom:3px}
+.tile small{font-size:11px;color:#666;font-weight:700}
+.tile.done{background:#D7F5E5}
+.tile.done::after{content:‘✓’;position:absolute;top:6px;right:10px;color:var(–good);font-weight:800;font-size:20px}
+.tile{position:relative}
 
-@keyframes brincar{
-0%,100%{ transform: translateY(0); }
-30%{ transform: translateY(-8px); }
-60%{ transform: translateY(-4px); }
+.tile.t1{background:#FFE8D6}
+.tile.t2{background:#E8F4FF}
+.tile.t3{background:#F4E8FF}
+.tile.t4{background:#FFF4D6}
+.tile.t5{background:#E8FFF0}
+.tile.t6{background:#FFE8F0}
+
+.quiz-btn{
+grid-column:1/-1;
+background:var(–ink);color:var(–bg);
+text-align:center;padding:18px;
+font-family:‘Fraunces’,serif;font-weight:800;font-size:20px;
+border:3px solid var(–ink);border-radius:var(–radius);
+box-shadow:var(–shadow);cursor:pointer;
 }
-@keyframes temblar{
-0%,100%{ transform: translateX(0); }
-25%{ transform: translateX(-6px); }
-75%{ transform: translateX(6px); }
+.quiz-btn:active{transform:translate(3px,3px);box-shadow:var(–shadow-sm)}
+.quiz-btn .sub{display:block;font-family:‘Nunito’;font-size:13px;font-weight:700;opacity:.8;margin-top:4px}
+
+/* ====== VISTA DE TEMA ====== */
+.view{display:none}
+.view.active{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.back{
+background:var(–ink);color:var(–bg);
+border:none;padding:8px 14px;border-radius:999px;
+font-family:inherit;font-weight:700;font-size:13px;
+margin-bottom:14px;cursor:pointer;
+display:inline-flex;align-items:center;gap:6px;
 }
 
-/* Input para completar */
-.input-completar{
-width:100%;
-padding: 14px 18px;
-border: 3px solid var(–morado);
-border-radius: 15px;
-font-size:17px;
-font-family: inherit;
-font-weight:700;
-background: var(–crema);
-color: var(–texto);
+.topic-head{
+background:var(–card);
+border:3px solid var(–ink);
+border-radius:var(–radius);
+padding:16px;margin-bottom:14px;
+box-shadow:var(–shadow-sm);
 }
-.input-completar:focus{
-outline:none;
-border-color: var(–azul);
-box-shadow: 0 0 0 4px rgba(25,118,210,.25);
-}
-.btn-comprobar{
-background: var(–verde);
-color:#FFFFFF;
-border:none;
-padding: 12px 28px;
-font-size:17px;
-font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
-font-weight:800;
-border-radius: 30px;
-cursor:pointer;
-margin-top:14px;
-box-shadow: 0 4px 0 #1B5E20;
-transition: all .15s ease;
-text-shadow: 1px 1px 0 rgba(0,0,0,.3);
-}
-.btn-comprobar:hover{ transform: translateY(-2px); box-shadow: 0 6px 0 #1B5E20; }
-.btn-comprobar:active{ transform: translateY(2px); box-shadow: 0 1px 0 #1B5E20; }
-.btn-comprobar:disabled{ background:#999; box-shadow:none; cursor:not-allowed; }
+.topic-head h2{font-size:24px;margin-bottom:6px}
+.topic-head p{font-size:14px;color:#444;font-weight:600}
+.progress-wrap{background:#eee;height:10px;border-radius:999px;margin-top:12px;border:2px solid var(–ink);overflow:hidden}
+.progress-fill{height:100%;background:var(–good);width:0;transition:width .3s ease}
 
-/* Feedback */
+/* Teoría */
+.theory{
+background:#FFF4D6;
+border:3px solid var(–ink);
+border-radius:var(–radius);
+padding:14px;margin-bottom:14px;
+box-shadow:var(–shadow-sm);
+}
+.theory h3{font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.theory p{font-size:14px;margin-bottom:6px}
+.theory ul{padding-left:20px;margin:6px 0}
+.theory li{font-size:13.5px;margin-bottom:4px}
+.theory .example{background:white;border:2px dashed var(–ink);padding:8px 10px;border-radius:var(–radius-sm);margin-top:8px;font-size:13px}
+.theory strong{color:var(–accent)}
+
+/* Ejercicios */
+.exercise{
+background:var(–card);
+border:3px solid var(–ink);
+border-radius:var(–radius);
+padding:16px;margin-bottom:14px;
+box-shadow:var(–shadow-sm);
+}
+.ex-num{display:inline-block;background:var(–accent);color:white;
+padding:2px 10px;border-radius:999px;font-size:12px;font-weight:800;
+border:2px solid var(–ink);margin-bottom:8px}
+.ex-question{font-size:15.5px;font-weight:700;margin-bottom:12px;line-height:1.4}
+.ex-question em{background:var(–accent-2);padding:0 4px;border-radius:4px;font-style:normal;font-weight:800}
+
+.options{display:flex;flex-direction:column;gap:8px}
+.option{
+background:#FAFAFA;
+border:2px solid var(–ink);
+border-radius:var(–radius-sm);
+padding:12px 14px;
+font-family:inherit;font-size:14.5px;font-weight:600;color:inherit;
+text-align:left;cursor:pointer;
+transition:all .15s ease;
+display:flex;align-items:center;gap:10px;
+}
+.option:active{transform:scale(.98)}
+.option.selected{background:var(–blue);color:white}
+.option.correct{background:var(–good);color:white;animation:pop .3s ease}
+.option.wrong{background:var(–bad);color:white;animation:shake .4s ease}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.04)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.option.disabled{pointer-events:none;opacity:.7}
+
 .feedback{
-margin-top:18px;
-padding: 16px 18px;
-border-radius: 15px;
-font-size:16px;
-line-height:1.5;
+margin-top:10px;padding:10px 12px;border-radius:var(–radius-sm);
+font-size:13.5px;font-weight:700;display:none;
+border:2px solid var(–ink);
+}
+.feedback.show{display:block;animation:fadeIn .25s}
+.feedback.ok{background:#D7F5E5;color:#1b5e3f}
+.feedback.no{background:#FFD9D4;color:#7a1f15}
+
+.input-field{
+width:100%;padding:12px 14px;
+border:2px solid var(–ink);border-radius:var(–radius-sm);
+font-family:inherit;font-size:15px;font-weight:600;
+background:#FAFAFA;
+}
+.input-field:focus{outline:none;background:white;box-shadow:3px 3px 0 var(–accent)}
+.check-btn{
+margin-top:10px;width:100%;
+background:var(–accent);color:white;
+border:2px solid var(–ink);border-radius:var(–radius-sm);
+padding:12px;font-family:inherit;font-weight:800;font-size:15px;
+cursor:pointer;box-shadow:var(–shadow-sm);
+}
+.check-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(–ink)}
+
+/* Final de tema */
+.finish-card{
+background:var(–good);color:white;
+border:3px solid var(–ink);border-radius:var(–radius);
+padding:20px;text-align:center;margin-top:14px;
+box-shadow:var(–shadow);
 display:none;
-border-left: 6px solid;
-animation: aparecer .4s ease;
-font-weight:600;
 }
-.feedback.activo{ display:block; }
-.feedback.bien{
-background: #E8F5E9;
-color: #1B5E20;
-border-color: var(–verde);
-}
-.feedback.mal{
-background: #FFEBEE;
-color: #B71C1C;
-border-color: var(–rojo);
-}
-.feedback strong{
-display:block;
-font-size:17px;
-margin-bottom:6px;
-font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
-font-weight:800;
+.finish-card.show{display:block;animation:fadeIn .3s}
+.finish-card h3{font-size:22px;margin-bottom:6px}
+.finish-card p{font-weight:700;margin-bottom:12px}
+.finish-card button{
+background:white;color:var(–ink);
+border:2px solid var(–ink);border-radius:var(–radius-sm);
+padding:10px 18px;font-family:inherit;font-weight:800;font-size:14px;
+cursor:pointer;margin:4px;
 }
 
-.btn-siguiente{
-background: linear-gradient(135deg, var(–azul), var(–morado));
-color:#FFFFFF;
-border:none;
-padding: 13px 30px;
-font-size:18px;
-font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
-font-weight:800;
-border-radius: 30px;
-cursor:pointer;
-margin-top:15px;
-box-shadow: 0 4px 0 var(–azul-fuerte);
-transition: all .15s ease;
-display:none;
-text-shadow: 1px 1px 0 rgba(0,0,0,.3);
+/* ====== QUIZ FINAL ====== */
+.quiz-intro{
+background:var(–purple);color:white;
+border:3px solid var(–ink);border-radius:var(–radius);
+padding:20px;margin-bottom:14px;box-shadow:var(–shadow);
 }
-.btn-siguiente.visible{ display:inline-block; }
-.btn-siguiente:hover{ transform: translateY(-2px); box-shadow: 0 6px 0 var(–azul-fuerte); }
-.btn-siguiente:active{ transform: translateY(2px); box-shadow: 0 1px 0 var(–azul-fuerte); }
-
-/* ===== RESULTADO ===== */
-.resultado{
-display:none;
-background:white;
-border-radius:30px;
-padding: 35px 25px;
-text-align:center;
-box-shadow: var(–sombra);
-border: 4px solid var(–amarillo-oscuro);
-animation: aparecer .6s ease;
-}
-.resultado.activo{ display:block; }
-.resultado .emoji-grande{
-font-size: 80px;
-margin-bottom:10px;
-animation: brincar 1.2s ease infinite;
-}
-.resultado h2{
-font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
-font-size:30px;
-color:var(–rojo);
-margin-bottom:15px;
-font-weight:800;
-}
-.resultado .puntaje-final{
-font-size: 60px;
-font-weight:800;
-color: var(–azul-oscuro);
-margin: 15px 0;
-font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
-}
-.resultado .mensaje{
-font-size:17px;
-line-height:1.5;
-color: var(–texto);
-margin-bottom:20px;
-max-width: 500px;
-margin-left:auto; margin-right:auto;
-font-weight:600;
-}
-.resultado .stats{
-display:grid;
-grid-template-columns: repeat(2, 1fr);
-gap:12px;
-max-width: 380px;
-margin: 20px auto;
-}
-.stat-box{
-background: var(–crema);
-padding: 14px;
-border-radius: 15px;
-border: 3px solid;
-}
-.stat-box.bien{ border-color: var(–verde); }
-.stat-box.mal{ border-color: var(–rojo); }
-.stat-box .num{
-font-size:32px;
-font-weight:800;
-font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
-}
-.stat-box.bien .num{ color: var(–verde); }
-.stat-box.mal .num{ color: var(–rojo); }
-.stat-box .label{ font-size:14px; font-weight:800; color:var(–texto); }
-
-.btn-reiniciar{
-background: linear-gradient(135deg, var(–rojo), var(–rosa));
-color:#FFFFFF;
-border:none;
-padding: 14px 35px;
-font-size:20px;
-font-family:‘Baloo 2’, ‘Trebuchet MS’, sans-serif;
-font-weight:800;
-border-radius: 50px;
-cursor:pointer;
-box-shadow: 0 5px 0 var(–rojo-oscuro);
-transition: all .15s ease;
-margin-top:10px;
-text-shadow: 1px 1px 0 rgba(0,0,0,.3);
-}
-.btn-reiniciar:hover{ transform: translateY(-2px); box-shadow: 0 7px 0 var(–rojo-oscuro); }
-.btn-reiniciar:active{ transform: translateY(3px); box-shadow: 0 2px 0 var(–rojo-oscuro); }
-
-/* Confeti */
-.confeti{
-position:fixed;
-top:-10px;
-width:10px;
-height:10px;
-z-index:1000;
-pointer-events:none;
-animation: caer linear forwards;
-}
-@keyframes caer{
-to { transform: translateY(110vh) rotate(720deg); opacity:0; }
+.quiz-intro h2{font-size:26px;margin-bottom:8px}
+.quiz-intro ul{padding-left:20px;margin-top:8px;font-weight:600;font-size:14px}
+.quiz-intro li{margin-bottom:4px}
+.quiz-intro button{
+margin-top:14px;width:100%;
+background:var(–accent-2);color:var(–ink);
+border:2px solid var(–ink);border-radius:var(–radius-sm);
+padding:12px;font-family:inherit;font-weight:800;font-size:16px;cursor:pointer;
+box-shadow:2px 2px 0 var(–ink);
 }
 
-footer{
-text-align:center;
-margin-top: 40px;
-color: var(–azul-oscuro);
-font-size:14px;
-font-weight:700;
+/* Resultado del quiz */
+.results{
+background:var(–card);border:3px solid var(–ink);
+border-radius:var(–radius);padding:20px;
+box-shadow:var(–shadow);margin-bottom:14px;
 }
-footer .corazon{ color: var(–rojo); animation: latir 1.2s ease infinite; display:inline-block; }
-@keyframes latir { 0%,100%{transform:scale(1);} 50%{transform:scale(1.2);} }
+.score-big{
+font-family:‘Fraunces’,serif;
+font-size:70px;font-weight:800;text-align:center;
+line-height:1;margin:12px 0;
+}
+.score-label{text-align:center;font-weight:800;font-size:18px;margin-bottom:14px}
+.grade-bar{background:#eee;height:22px;border-radius:999px;border:2px solid var(–ink);overflow:hidden;margin:10px 0}
+.grade-bar .fill{height:100%;transition:width .8s ease}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.stat{background:#FAFAFA;border:2px solid var(–ink);border-radius:var(–radius-sm);padding:10px;text-align:center}
+.stat b{display:block;font-size:22px;font-family:‘Fraunces’,serif}
+.stat small{font-size:11px;font-weight:700}
 
-/* Responsive */
-@media (max-width: 480px){
-body{ padding: 15px 10px 40px; }
-header{ padding: 25px 15px; }
-header h1{ font-size: 24px; }
-.pregunta-card{ padding: 20px 16px; }
-.pregunta-texto{ font-size:17px; }
-.opcion{ font-size:15px; padding: 12px 14px; }
-.resultado{ padding: 28px 18px; }
-.resultado h2{ font-size:24px; }
-.resultado .puntaje-final{ font-size:48px; }
-.tema-chip{ font-size:13px; padding: 7px 13px; }
-.intro h2{ font-size:22px; }
+.review-item{
+background:var(–card);border:3px solid var(–ink);
+border-radius:var(–radius);padding:14px;margin-bottom:10px;
+box-shadow:var(–shadow-sm);
+}
+.review-item.wrong{border-left:10px solid var(–bad)}
+.review-item.ok{border-left:10px solid var(–good)}
+.review-item .q{font-weight:700;font-size:14.5px;margin-bottom:6px}
+.review-item .ans{font-size:13.5px;margin-top:4px}
+.review-item .ans.yours{color:var(–bad);font-weight:700}
+.review-item .ans.good{color:var(–good);font-weight:700}
+.review-item .tip{background:#FFF4D6;border:2px dashed var(–ink);padding:8px;border-radius:var(–radius-sm);margin-top:8px;font-size:13px;font-weight:600}
+
+.mascot{font-size:48px;text-align:center;margin:10px 0}
+
+/* utilidades */
+.row-btns{display:flex;gap:8px;margin-top:12px}
+.row-btns button{flex:1}
+.ghost{
+background:white;color:var(–ink);
+border:2px solid var(–ink);border-radius:var(–radius-sm);
+padding:10px;font-family:inherit;font-weight:800;font-size:14px;cursor:pointer;
 }
 </style>
 
 </head>
 <body>
 
-<div class="container">
-
-  <header>
-    <h1>🇨🇷 ¡Cuestionario Mágico! 📚</h1>
-    <div class="sub">Estudios Sociales · 4to Año · MEP</div>
-  </header>
-
-  <!-- INTRO -->
-
-  <section class="intro" id="intro">
-    <h2>🎯 ¡Prepárate para tu examen!</h2>
-    <p>Hola amigo/a 👋 Este cuestionario te ayudará a repasar todo lo que has aprendido.</p>
-    <p>Tendrás <strong>preguntas de selección, verdadero/falso y completar</strong>. ¡Mucha suerte! 🍀</p>
-    <div class="temas">
-      <span class="tema-chip c1">🌎 Hemisferios</span>
-      <span class="tema-chip c2">🗺️ Territorio CR</span>
-      <span class="tema-chip c3">🌿 Biodiversidad</span>
-      <span class="tema-chip c4">🌍 Ciudadanía Global</span>
-      <span class="tema-chip c5">⚔️ Batalla Santa Rosa</span>
-      <span class="tema-chip c6">🏛️ Batalla de Rivas</span>
-      <span class="tema-chip c7">📖 Estudios Sociales</span>
-    </div>
-    <br>
-    <button class="btn-empezar" onclick="iniciar()">🚀 ¡Empezar!</button>
-  </section>
-
-  <!-- PROGRESO -->
-
-  <div class="progreso-wrap" id="progresoWrap">
-    <div class="progreso-info">
-      <span class="pregunta-num">Pregunta <span id="numActual">1</span> de <span id="numTotal">20</span></span>
-      <span class="puntos">⭐ <span id="puntosActuales">0</span> pts</span>
-    </div>
-    <div class="progreso-bar"><div class="progreso-fill" id="progresoFill"></div></div>
+<div class="topbar">
+  <span class="emoji">📚</span>
+  <div>
+    <div class="title">Español 4° — Práctica</div>
+    <div style="font-size:11px;opacity:.8">Examen: Viernes 24 abril</div>
   </div>
-
-  <!-- CONTENEDOR PREGUNTAS -->
-
-  <div id="contenedorPreguntas"></div>
-
-  <!-- RESULTADO -->
-
-  <div class="resultado" id="resultado">
-    <div class="emoji-grande" id="emojiResultado">🏆</div>
-    <h2 id="tituloResultado">¡Excelente trabajo!</h2>
-    <div class="puntaje-final"><span id="puntajeFinal">0</span> / <span id="puntajeMax">100</span></div>
-    <div class="stats">
-      <div class="stat-box bien">
-        <div class="num" id="aciertos">0</div>
-        <div class="label">✅ Correctas</div>
-      </div>
-      <div class="stat-box mal">
-        <div class="num" id="errores">0</div>
-        <div class="label">❌ Incorrectas</div>
-      </div>
-    </div>
-    <p class="mensaje" id="mensajeFinal">¡Sigue así!</p>
-    <button class="btn-reiniciar" onclick="reiniciar()">🔄 Volver a intentar</button>
-  </div>
-
-  <footer>
-    Hecho con <span class="corazon">❤️</span> para estudiar · ¡Pura vida! 🌴
-  </footer>
-
+  <div class="score" id="starScore">⭐ 0</div>
 </div>
 
+<!-- ============ MENÚ PRINCIPAL ============ -->
+
+<section id="home" class="view active">
+  <div class="hero">
+    <h1>¡Hola! 👋</h1>
+    <p>Soy tu compañero de estudio. Vamos a repasar <strong>TODO</strong> lo del examen de mañana, paso a pasito. ¿Listo?</p>
+    <span class="pill">6 temas + quiz final</span>
+  </div>
+
+  <div class="menu" id="menu">
+    <button class="tile t1" data-topic="0">
+      <span class="icon">📖</span>
+      <h3>Textos</h3>
+      <small>Narrativos, expositivos, descriptivos</small>
+    </button>
+    <button class="tile t2" data-topic="1">
+      <span class="icon">🔄</span>
+      <h3>Sinónimos y Antónimos</h3>
+      <small>Palabras parecidas y opuestas</small>
+    </button>
+    <button class="tile t3" data-topic="2">
+      <span class="icon">🏷️</span>
+      <h3>Sustantivos</h3>
+      <small>Propios, comunes, colectivos…</small>
+    </button>
+    <button class="tile t4" data-topic="3">
+      <span class="icon">👫</span>
+      <h3>Género y Número</h3>
+      <small>Masc/Fem · Sing/Plural</small>
+    </button>
+    <button class="tile t5" data-topic="4">
+      <span class="icon">🔗</span>
+      <h3>Artículos</h3>
+      <small>el, la, un, al, del…</small>
+    </button>
+    <button class="tile t6" data-topic="5">
+      <span class="icon">🌈</span>
+      <h3>Adjetivos</h3>
+      <small>Cualidades del sustantivo</small>
+    </button>
+    <button class="quiz-btn" id="startQuiz">
+      🏆 QUIZ FINAL
+      <span class="sub">Examen de práctica con nota</span>
+    </button>
+  </div>
+</section>
+
+<!-- ============ VISTA DE TEMA ============ -->
+
+<section id="topicView" class="view">
+  <button class="back" onclick="goHome()">← Volver al menú</button>
+  <div class="topic-head">
+    <h2 id="topicTitle"></h2>
+    <p id="topicDesc"></p>
+    <div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+  <div id="theoryBox"></div>
+  <div id="exerciseList"></div>
+  <div class="finish-card" id="finishCard">
+    <h3>¡Excelente trabajo! 🎉</h3>
+    <p id="finishText"></p>
+    <button onclick="goHome()">Volver al menú</button>
+    <button onclick="nextTopic()">Siguiente tema →</button>
+  </div>
+</section>
+
+<!-- ============ QUIZ FINAL ============ -->
+
+<section id="quizView" class="view">
+  <button class="back" onclick="goHome()">← Volver al menú</button>
+  <div id="quizContent"></div>
+</section>
+
+<!-- ============ RESULTADOS ============ -->
+
+<section id="resultsView" class="view">
+  <button class="back" onclick="goHome()">← Volver al menú</button>
+  <div id="resultsContent"></div>
+</section>
+
 <script>
-// ============== BANCO DE PREGUNTAS ==============
-const preguntas = [
+/* ===========================================================
+   CONTENIDO COMPLETO — Práctica de Español 4° Grado
+   Temario: textos, sinónimos/antónimos, sustantivos,
+   género/número, artículos, adjetivos
+   =========================================================== */
+
+const topics = [
+  /* ---------- TEMA 1: TIPOS DE TEXTOS ---------- */
   {
-    tipo: "seleccion",
-    tema: "🌎 Hemisferios",
-    pregunta: "¿Cuál es la línea imaginaria que divide la Tierra en Hemisferio Norte y Hemisferio Sur?",
-    opciones: ["Meridiano de Greenwich", "Paralelo del Ecuador", "Trópico de Cáncer", "Trópico de Capricornio"],
-    correcta: 1,
-    explicacion: "El Paralelo del Ecuador (o Paralelo Cero) divide la Tierra en Hemisferio Norte y Hemisferio Sur. 🌍"
+    title:"Tipos de Textos 📖",
+    desc:"Narrativos, expositivos y descriptivos. Estructura y elementos.",
+    icon:"📖",
+    theory:`
+      <div class="theory">
+        <h3>📝 Los tres tipos de textos</h3>
+        <p><strong>Narrativo:</strong> cuenta una historia con personajes, tiempo y espacio. Tiene <strong>introducción, desarrollo (nudo) y desenlace</strong>.</p>
+        <p><strong>Expositivo:</strong> explica o informa sobre un tema (noticias, artículos).</p>
+        <p><strong>Descriptivo:</strong> dice cómo son las cosas, personas o lugares (usa muchos adjetivos).</p>
+        <div class="example">✨ Ejemplo narrativo: "Había una vez un zorro que vivía en el bosque…"<br>
+        ✨ Ejemplo expositivo: "El agua se compone de hidrógeno y oxígeno."<br>
+        ✨ Ejemplo descriptivo: "La casa era grande, blanca y tenía un jardín florido."</div>
+      </div>
+      <div class="theory" style="background:#E8F4FF">
+        <h3>🎬 Partes de un texto narrativo</h3>
+        <ul>
+          <li><strong>Introducción:</strong> presenta personajes y lugar.</li>
+          <li><strong>Desarrollo / nudo:</strong> ocurre el problema o conflicto.</li>
+          <li><strong>Desenlace:</strong> se resuelve la historia (final).</li>
+        </ul>
+        <p style="margin-top:6px"><strong>Elementos:</strong> personajes, tiempo y espacio.</p>
+      </div>
+    `,
+    exercises:[
+      {q:"¿Qué tipo de texto cuenta una historia con personajes?",opts:["Expositivo","Narrativo","Descriptivo"],a:1,tip:"El texto narrativo narra historias con personajes, tiempo y espacio."},
+      {q:"¿Qué tipo de texto explica o informa un tema?",opts:["Narrativo","Descriptivo","Expositivo"],a:2,tip:"El expositivo da información (noticias, artículos, reportes)."},
+      {q:"'La mariposa era azul, pequeña y muy veloz.' Este texto es…",opts:["Descriptivo","Narrativo","Expositivo"],a:0,tip:"Describe cómo es la mariposa usando adjetivos."},
+      {q:"¿Cuál es la parte del texto narrativo donde ocurre el problema?",opts:["Introducción","Desarrollo / nudo","Desenlace"],a:1,tip:"En el desarrollo o nudo aparece el conflicto."},
+      {q:"¿En qué parte se presentan los personajes y el lugar?",opts:["Introducción","Desarrollo","Desenlace"],a:0,tip:"La introducción presenta a los personajes y el lugar."},
+      {q:"¿Cómo se llama el final de la historia?",opts:["Inicio","Nudo","Desenlace"],a:2,tip:"El desenlace es el final donde se resuelve el problema."},
+      {q:"Los personajes, el tiempo y el espacio son elementos de un texto…",opts:["Expositivo","Descriptivo","Narrativo"],a:2,tip:"Los textos narrativos tienen personajes, tiempo y espacio."},
+      {q:"'El volcán Poás está en Costa Rica y mide 2.708 metros.' Este texto es…",opts:["Narrativo","Expositivo","Descriptivo"],a:1,tip:"Está informando datos: es expositivo."},
+      {q:"Una noticia del periódico es un texto…",opts:["Narrativo","Descriptivo","Expositivo"],a:2,tip:"Las noticias informan hechos: son expositivas."},
+      {q:"Un cuento de hadas es un texto…",opts:["Descriptivo","Narrativo","Expositivo"],a:1,tip:"Los cuentos narran historias: son narrativos."},
+      {q:"'El señor era alto, con barba blanca y ojos azules.' Este texto es…",opts:["Descriptivo","Narrativo","Expositivo"],a:0,tip:"Describe a una persona: descriptivo."},
+      {q:"¿Cuál de estas NO es una parte del texto narrativo?",opts:["Introducción","Resumen","Desenlace"],a:1,tip:"Las tres partes son: introducción, desarrollo y desenlace."},
+      {q:"En '…y vivieron felices para siempre', estamos en la parte de…",opts:["Introducción","Nudo","Desenlace"],a:2,tip:"Es el final: desenlace."},
+      {q:"El 'tiempo' en un texto narrativo se refiere a…",opts:["Cuándo ocurre la historia","El clima","La duración del libro"],a:0,tip:"El tiempo indica cuándo sucede (ayer, hace mucho, etc.)."},
+      {q:"El 'espacio' en un texto narrativo es…",opts:["El tamaño del libro","El lugar donde ocurre","El personaje principal"],a:1,tip:"El espacio es el lugar donde pasa la historia."},
+    ]
   },
+
+  /* ---------- TEMA 2: SINÓNIMOS Y ANTÓNIMOS ---------- */
   {
-    tipo: "seleccion",
-    tema: "🌎 Hemisferios",
-    pregunta: "¿Qué línea imaginaria divide la Tierra en Hemisferio Oriental y Occidental?",
-    opciones: ["Paralelo del Ecuador", "Trópico de Cáncer", "Meridiano de Greenwich", "Línea del Polo"],
-    correcta: 2,
-    explicacion: "El Meridiano de Greenwich (o Meridiano Cero) divide la Tierra en Hemisferio Oriental y Occidental. 🧭"
+    title:"Sinónimos y Antónimos 🔄",
+    desc:"Palabras con significado parecido y opuesto.",
+    icon:"🔄",
+    theory:`
+      <div class="theory">
+        <h3>🧠 ¿Qué son?</h3>
+        <p><strong>Sinónimos:</strong> palabras que significan lo mismo o casi lo mismo.</p>
+        <p><strong>Antónimos:</strong> palabras con significado opuesto.</p>
+        <div class="example">✨ Sinónimos: bonito = lindo · contento = feliz · rápido = veloz<br>
+        ✨ Antónimos: alto ↔ bajo · día ↔ noche · frío ↔ caliente</div>
+      </div>
+    `,
+    exercises:[
+      {q:"¿Cuál es sinónimo de 'feliz'?",opts:["Triste","Alegre","Enojado"],a:1,tip:"Feliz = alegre (significan lo mismo)."},
+      {q:"¿Cuál es antónimo de 'grande'?",opts:["Enorme","Pequeño","Alto"],a:1,tip:"Grande ↔ pequeño (son opuestos)."},
+      {q:"Sinónimo de 'bonito':",opts:["Feo","Lindo","Sucio"],a:1,tip:"Bonito = lindo."},
+      {q:"Antónimo de 'frío':",opts:["Helado","Caliente","Fresco"],a:1,tip:"Frío ↔ caliente."},
+      {q:"Sinónimo de 'rápido':",opts:["Lento","Veloz","Despacio"],a:1,tip:"Rápido = veloz."},
+      {q:"Antónimo de 'alto':",opts:["Elevado","Bajo","Grande"],a:1,tip:"Alto ↔ bajo."},
+      {q:"Sinónimo de 'contento':",opts:["Triste","Aburrido","Feliz"],a:2,tip:"Contento = feliz."},
+      {q:"Antónimo de 'día':",opts:["Tarde","Noche","Mañana"],a:1,tip:"Día ↔ noche."},
+      {q:"Sinónimo de 'inteligente':",opts:["Tonto","Listo","Flojo"],a:1,tip:"Inteligente = listo."},
+      {q:"Antónimo de 'abrir':",opts:["Empujar","Cerrar","Halar"],a:1,tip:"Abrir ↔ cerrar."},
+      {q:"Sinónimo de 'casa':",opts:["Hogar","Calle","Parque"],a:0,tip:"Casa = hogar."},
+      {q:"Antónimo de 'limpio':",opts:["Claro","Sucio","Nuevo"],a:1,tip:"Limpio ↔ sucio."},
+      {q:"Sinónimo de 'mirar':",opts:["Observar","Hablar","Correr"],a:0,tip:"Mirar = observar."},
+      {q:"Antónimo de 'entrar':",opts:["Caminar","Salir","Volver"],a:1,tip:"Entrar ↔ salir."},
+      {q:"Sinónimo de 'pequeño':",opts:["Chico","Grande","Mediano"],a:0,tip:"Pequeño = chico."},
+    ]
   },
+
+  /* ---------- TEMA 3: SUSTANTIVOS ---------- */
   {
-    tipo: "vf",
-    tema: "🌎 Hemisferios",
-    pregunta: "Costa Rica se ubica en el Hemisferio Norte y en el Hemisferio Oeste (Occidental).",
-    correcta: true,
-    explicacion: "¡Correcto! Costa Rica se ubica en el Hemisferio Norte y en el Hemisferio Oeste. 🇨🇷"
+    title:"Sustantivos 🏷️",
+    desc:"Propios, comunes, colectivos, individuales, abstractos y concretos.",
+    icon:"🏷️",
+    theory:`
+      <div class="theory">
+        <h3>📦 ¿Qué es un sustantivo?</h3>
+        <p>Es la palabra que <strong>nombra</strong> personas, animales, cosas, lugares o sentimientos.</p>
+      </div>
+      <div class="theory" style="background:#F4E8FF">
+        <h3>🗂️ Clases de sustantivos</h3>
+        <ul>
+          <li><strong>Propios:</strong> nombres específicos. Se escriben con mayúscula. <em>(María, Costa Rica, Fido)</em></li>
+          <li><strong>Comunes:</strong> nombres generales. <em>(niña, país, perro)</em></li>
+          <li><strong>Individuales:</strong> nombran un solo ser en singular. <em>(pez, árbol)</em></li>
+          <li><strong>Colectivos:</strong> en singular nombran un grupo. <em>(cardumen, bosque, rebaño)</em></li>
+          <li><strong>Concretos:</strong> se pueden ver o tocar. <em>(mesa, flor, perro)</em></li>
+          <li><strong>Abstractos:</strong> NO se pueden tocar: sentimientos o ideas. <em>(amor, felicidad, miedo)</em></li>
+        </ul>
+      </div>
+    `,
+    exercises:[
+      {q:"'Ana' es un sustantivo…",opts:["Común","Propio","Abstracto"],a:1,tip:"Los nombres de personas son propios (mayúscula)."},
+      {q:"'Perro' es un sustantivo…",opts:["Propio","Común","Abstracto"],a:1,tip:"'Perro' es general: común."},
+      {q:"'Amor' es un sustantivo…",opts:["Concreto","Abstracto","Colectivo"],a:1,tip:"No se puede tocar: es abstracto."},
+      {q:"'Mesa' es un sustantivo…",opts:["Abstracto","Concreto","Propio"],a:1,tip:"Se puede ver y tocar: concreto."},
+      {q:"'Rebaño' es un sustantivo…",opts:["Individual","Colectivo","Propio"],a:1,tip:"En singular nombra un grupo: colectivo."},
+      {q:"'Oveja' es un sustantivo…",opts:["Individual","Colectivo","Abstracto"],a:0,tip:"Nombra un solo ser: individual."},
+      {q:"'Costa Rica' es un sustantivo…",opts:["Común","Propio","Abstracto"],a:1,tip:"Nombre de país: propio."},
+      {q:"'Felicidad' es un sustantivo…",opts:["Concreto","Abstracto","Colectivo"],a:1,tip:"Es un sentimiento: abstracto."},
+      {q:"'Bosque' es colectivo de…",opts:["Flores","Árboles","Piedras"],a:1,tip:"Un bosque es un conjunto de árboles."},
+      {q:"'Cardumen' es colectivo de…",opts:["Aves","Peces","Abejas"],a:1,tip:"Un cardumen es un grupo de peces."},
+      {q:"'Enjambre' es colectivo de…",opts:["Abejas","Vacas","Perros"],a:0,tip:"Un enjambre es un grupo de abejas."},
+      {q:"¿Cuál de estas palabras es sustantivo propio?",opts:["ciudad","San José","calle"],a:1,tip:"San José es nombre específico de un lugar."},
+      {q:"¿Cuál es un sustantivo abstracto?",opts:["Silla","Miedo","Casa"],a:1,tip:"Miedo es un sentimiento: abstracto."},
+      {q:"¿Cuál es un sustantivo concreto?",opts:["Tristeza","Amistad","Libro"],a:2,tip:"Libro se puede tocar: concreto."},
+      {q:"¿Cuál de estos es un sustantivo colectivo?",opts:["Pájaro","Bandada","Pluma"],a:1,tip:"Bandada = grupo de pájaros."},
+    ]
   },
+
+  /* ---------- TEMA 4: GÉNERO Y NÚMERO ---------- */
   {
-    tipo: "completar",
-    tema: "🌎 Hemisferios",
-    pregunta: "Los cuatro hemisferios son: Norte, Sur, Oriental y __________.",
-    respuestas: ["occidental", "oeste"],
-    explicacion: "Los hemisferios son: Norte, Sur, Oriental y Occidental (también llamado Oeste). 🌐"
+    title:"Género y Número 👫",
+    desc:"Masculino / femenino · singular / plural.",
+    icon:"👫",
+    theory:`
+      <div class="theory">
+        <h3>👧👦 Género</h3>
+        <p><strong>Masculino:</strong> se puede usar con <em>el / un / los / unos</em>. Ej: el niño, el perro.</p>
+        <p><strong>Femenino:</strong> se puede usar con <em>la / una / las / unas</em>. Ej: la niña, la mesa.</p>
+      </div>
+      <div class="theory" style="background:#FFE8D6">
+        <h3>1️⃣ vs 👥 Número</h3>
+        <p><strong>Singular:</strong> uno solo. <em>(libro, gato)</em></p>
+        <p><strong>Plural:</strong> más de uno. <em>(libros, gatos)</em></p>
+        <div class="example">Casi siempre el plural se forma añadiendo <strong>-s</strong> o <strong>-es</strong>.<br>flor → flores · mesa → mesas</div>
+      </div>
+    `,
+    exercises:[
+      {q:"'El niño' es…",opts:["Masculino singular","Femenino singular","Masculino plural"],a:0,tip:"'El' + palabra que termina en 'o': masculino singular."},
+      {q:"'Las casas' es…",opts:["Masculino plural","Femenino plural","Femenino singular"],a:1,tip:"'Las' indica femenino plural."},
+      {q:"'La mesa' es…",opts:["Masculino singular","Femenino singular","Femenino plural"],a:1,tip:"'La' + mesa: femenino singular."},
+      {q:"'Los libros' es…",opts:["Masculino plural","Masculino singular","Femenino plural"],a:0,tip:"'Los' indica masculino plural."},
+      {q:"Plural de 'flor':",opts:["Flors","Flores","Flora"],a:1,tip:"Se le agrega '-es': flores."},
+      {q:"Plural de 'lápiz':",opts:["Lápizes","Lápices","Lápiz"],a:1,tip:"La 'z' cambia a 'c' y se añade '-es': lápices."},
+      {q:"Femenino de 'profesor':",opts:["Profesora","Profesores","Profesor"],a:0,tip:"Se añade '-a': profesora."},
+      {q:"Masculino de 'gata':",opts:["Gata","Gato","Gatos"],a:1,tip:"La 'a' cambia a 'o': gato."},
+      {q:"Singular de 'árboles':",opts:["Árbol","Árboles","Arbolito"],a:0,tip:"Quitamos '-es': árbol."},
+      {q:"'Una manzana' es…",opts:["Masculino singular","Femenino singular","Femenino plural"],a:1,tip:"'Una' indica femenino singular."},
+      {q:"¿Cuál de estos es femenino?",opts:["El carro","La luna","El sol"],a:1,tip:"La luna → femenino."},
+      {q:"¿Cuál de estos es plural?",opts:["Perro","Perros","Perrito"],a:1,tip:"Perros: más de un perro."},
+      {q:"Plural de 'camión':",opts:["Camiones","Camións","Camión"],a:0,tip:"Se añade '-es': camiones."},
+      {q:"Femenino de 'león':",opts:["Leones","Leona","León"],a:1,tip:"León → leona."},
+      {q:"'Los estudiantes' es…",opts:["Masculino singular","Masculino plural","Femenino plural"],a:1,tip:"'Los' indica masculino plural."},
+    ]
   },
+
+  /* ---------- TEMA 5: ARTÍCULOS ---------- */
   {
-    tipo: "seleccion",
-    tema: "🗺️ Territorio CR",
-    pregunta: "¿Cómo está constituido el territorio costarricense?",
-    opciones: [
-      "Solo territorio continental",
-      "Territorio marítimo y aéreo",
-      "Territorio marítimo, continental y aéreo",
-      "Solo territorio marítimo"
-    ],
-    correcta: 2,
-    explicacion: "El territorio de Costa Rica está formado por tres partes: marítimo, continental y aéreo. 🏞️"
+    title:"Artículos 🔗",
+    desc:"Definidos, indefinidos, neutro y contracciones (al, del).",
+    icon:"🔗",
+    theory:`
+      <div class="theory">
+        <h3>📌 Tres tipos de artículos</h3>
+        <ul>
+          <li><strong>Definidos:</strong> el, la, los, las <em>(algo conocido)</em></li>
+          <li><strong>Indefinidos:</strong> un, una, unos, unas <em>(algo no específico)</em></li>
+          <li><strong>Neutro:</strong> lo <em>(lo bueno, lo bonito)</em></li>
+        </ul>
+      </div>
+      <div class="theory" style="background:#E8FFF0">
+        <h3>🔗 Contracciones</h3>
+        <p>Cuando se juntan dos palabras cortas:</p>
+        <ul>
+          <li><strong>a + el = al</strong> → "Voy <em>al</em> parque" (no "a el")</li>
+          <li><strong>de + el = del</strong> → "La casa <em>del</em> abuelo" (no "de el")</li>
+        </ul>
+      </div>
+    `,
+    exercises:[
+      {q:"¿Cuál es un artículo definido?",opts:["un","el","lo"],a:1,tip:"Definidos: el, la, los, las."},
+      {q:"¿Cuál es un artículo indefinido?",opts:["las","una","el"],a:1,tip:"Indefinidos: un, una, unos, unas."},
+      {q:"¿Cuál es el artículo neutro?",opts:["la","lo","los"],a:1,tip:"El neutro es 'lo' (lo bueno, lo bonito)."},
+      {q:"'___ niña es alta.' ¿Qué artículo va?",opts:["El","La","Los"],a:1,tip:"Niña es femenino singular: 'la'."},
+      {q:"'Voy ___ parque.' ¿Qué forma va?",opts:["a el","al","del"],a:1,tip:"a + el = al (contracción)."},
+      {q:"'La casa ___ abuelo.' ¿Qué forma va?",opts:["de el","al","del"],a:2,tip:"de + el = del (contracción)."},
+      {q:"'___ libros son interesantes.' ¿Qué artículo va?",opts:["La","Los","Un"],a:1,tip:"Libros es masculino plural: 'los'."},
+      {q:"'Comí ___ manzana.' Indefinido femenino singular:",opts:["Un","Una","La"],a:1,tip:"Una manzana (indefinido fem. sing.)."},
+      {q:"'___ importante es ser feliz.' ¿Qué artículo va?",opts:["El","La","Lo"],a:2,tip:"'Lo importante' usa el neutro 'lo'."},
+      {q:"'Compré ___ zapatos.' Indefinido masculino plural:",opts:["Los","Unos","Un"],a:1,tip:"Unos zapatos (indefinido masc. plural)."},
+      {q:"¿Cuál NO es artículo definido?",opts:["el","las","una"],a:2,tip:"'Una' es indefinido."},
+      {q:"¿Cuál NO es artículo indefinido?",opts:["un","unos","los"],a:2,tip:"'Los' es definido."},
+      {q:"'Regresamos ___ colegio.' (a + el)",opts:["al","a el","del"],a:0,tip:"Siempre se escribe 'al', nunca 'a el'."},
+      {q:"'El perro ___ vecino ladra.' (de + el)",opts:["de el","del","al"],a:1,tip:"Siempre se escribe 'del', nunca 'de el'."},
+      {q:"'___ agua está fría.' ¿Qué artículo usamos?",opts:["La","El","Lo"],a:1,tip:"'Agua' es femenino pero lleva 'el' en singular: el agua."},
+    ]
   },
+
+  /* ---------- TEMA 6: ADJETIVOS ---------- */
   {
-    tipo: "seleccion",
-    tema: "🗺️ Territorio CR",
-    pregunta: "¿Cuál es el territorio MÁS amplio de Costa Rica?",
-    opciones: ["El continental", "El aéreo", "El marítimo", "Las montañas"],
-    correcta: 2,
-    explicacion: "¡El marítimo! Es el territorio más extenso de nuestro país. 🌊"
-  },
-  {
-    tipo: "vf",
-    tema: "🗺️ Territorio CR",
-    pregunta: "El territorio continental son todas las tierras emergidas del país.",
-    correcta: true,
-    explicacion: "¡Sí! El territorio continental son todas las tierras emergidas (que están sobre el agua). 🌄"
-  },
-  {
-    tipo: "seleccion",
-    tema: "🗺️ Territorio CR",
-    pregunta: "Costa Rica limita por mar con:",
-    opciones: ["México y Guatemala", "Colombia, Panamá y Ecuador", "Perú y Chile", "Estados Unidos y Cuba"],
-    correcta: 1,
-    explicacion: "Costa Rica limita por mar con Colombia, Panamá y Ecuador. 🚢"
-  },
-  {
-    tipo: "completar",
-    tema: "🗺️ Territorio CR",
-    pregunta: "Por el norte, Costa Rica limita con el país de __________.",
-    respuestas: ["nicaragua"],
-    explicacion: "Costa Rica limita al norte con Nicaragua. 🇳🇮"
-  },
-  {
-    tipo: "seleccion",
-    tema: "🗺️ Territorio CR",
-    pregunta: "¿En qué zona climática se ubica Costa Rica?",
-    opciones: ["Zona polar", "Zona intertropical", "Zona templada", "Zona desértica"],
-    correcta: 1,
-    explicacion: "Costa Rica se ubica en la zona intertropical, entre los Trópicos de Cáncer y Capricornio. ☀️"
-  },
-  {
-    tipo: "vf",
-    tema: "🌿 Biodiversidad",
-    pregunta: "Costa Rica es un puente biológico natural que alberga biodiversidad de América del Sur y América del Norte.",
-    correcta: true,
-    explicacion: "¡Correcto! Por eso tenemos tanta variedad de plantas y animales que atraen al turismo. 🦜🌺"
-  },
-  {
-    tipo: "seleccion",
-    tema: "🌿 Biodiversidad",
-    pregunta: "¿Por qué es bueno que Costa Rica tenga poca extensión territorial?",
-    opciones: [
-      "Porque hay menos personas",
-      "Porque se dura poco tiempo en movilizarse, favoreciendo el comercio y turismo",
-      "Porque hay menos animales",
-      "Porque cuesta menos hacer casas"
-    ],
-    correcta: 1,
-    explicacion: "¡Exacto! Al ser pequeño, es rápido moverse de un lugar a otro, lo que ayuda al comercio y al turismo. 🚌"
-  },
-  {
-    tipo: "seleccion",
-    tema: "🌿 Biodiversidad",
-    pregunta: "¿Cuál NO es una desventaja de la situación geográfica de Costa Rica?",
-    opciones: ["Terremotos y sismos", "Actividad volcánica", "Inundaciones y huracanes", "Mucha biodiversidad"],
-    correcta: 3,
-    explicacion: "¡Correcto! La biodiversidad es una VENTAJA, no una desventaja. Las desventajas son los desastres naturales. 🌋"
-  },
-  {
-    tipo: "vf",
-    tema: "🌍 Ciudadanía Global",
-    pregunta: "Un aspecto positivo de la ciudadanía global es que podemos saber qué pasa en el resto del mundo.",
-    correcta: true,
-    explicacion: "¡Sí! La ciudadanía global nos ayuda a estar informados y crear conciencia mundial. 🌐"
-  },
-  {
-    tipo: "seleccion",
-    tema: "🌍 Ciudadanía Global",
-    pregunta: "¿Cuál es un aspecto NEGATIVO de la ciudadanía global?",
-    opciones: [
-      "Mayor acceso al conocimiento",
-      "Las grandes empresas tienen más poder que los gobiernos",
-      "Saber qué pasa en el mundo",
-      "Crear conciencia global"
-    ],
-    correcta: 1,
-    explicacion: "Un aspecto negativo es que las grandes empresas tienen más poder que los gobiernos. ⚖️"
-  },
-  {
-    tipo: "completar",
-    tema: "🌪️ Naturaleza",
-    pregunta: "Un __________ natural NO afecta al ser humano, pero un desastre natural SÍ lo afecta.",
-    respuestas: ["evento"],
-    explicacion: "Un EVENTO natural no afecta al ser humano, mientras que un desastre natural sí lo afecta. 🌊"
-  },
-  {
-    tipo: "seleccion",
-    tema: "📖 Estudios Sociales",
-    pregunta: "¿Qué son los Estudios Sociales?",
-    opciones: [
-      "Una materia para aprender matemáticas",
-      "La materia que ayuda a comprender cómo viven las personas, la historia y los deberes",
-      "Una clase de educación física",
-      "Una materia solo de geografía"
-    ],
-    correcta: 1,
-    explicacion: "Los Estudios Sociales nos ayudan a comprender cómo viven las personas, cómo se organizan, la historia y nuestros deberes y derechos. 📚"
-  },
-  {
-    tipo: "vf",
-    tema: "📖 Estudios Sociales",
-    pregunta: "Los Estudios Sociales nos enseñan valores como respeto, solidaridad y responsabilidad.",
-    correcta: true,
-    explicacion: "¡Muy bien! También nos ayudan a ser mejores ciudadanos. 🤝"
-  },
-  {
-    tipo: "seleccion",
-    tema: "🌎 América",
-    pregunta: "Según los aspectos socioculturales, ¿en qué región se ubica Costa Rica?",
-    opciones: ["América Anglosajona", "América Latina o Latinoamérica", "Europa", "Asia"],
-    correcta: 1,
-    explicacion: "Costa Rica está en América Latina porque hablamos español y somos en su mayoría católicos. 🇨🇷"
-  },
-  {
-    tipo: "completar",
-    tema: "🌎 América",
-    pregunta: "América se divide en tres regiones: América del Norte, América Central y América del __________.",
-    respuestas: ["sur", "sud"],
-    explicacion: "América se divide en: América del Norte, América Central y América del Sur (Suramérica). 🗺️"
-  },
-  {
-    tipo: "seleccion",
-    tema: "⚔️ Batalla Santa Rosa",
-    pregunta: "¿Dónde ocurrió la Batalla de Santa Rosa?",
-    opciones: [
-      "En San José",
-      "En la Hacienda Santa Rosa, Guanacaste",
-      "En Limón",
-      "En Cartago"
-    ],
-    correcta: 1,
-    explicacion: "La Batalla ocurrió en la Hacienda Santa Rosa, en Guanacaste, una zona estratégica entre Costa Rica y Nicaragua. 🏚️"
-  },
-  {
-    tipo: "completar",
-    tema: "⚔️ Batalla Santa Rosa",
-    pregunta: "La Batalla de Santa Rosa ocurrió el 20 de marzo de __________.",
-    respuestas: ["1856"],
-    explicacion: "¡Correcto! Fue el 20 de marzo de 1856, durante la Campaña Nacional. 📅"
-  },
-  {
-    tipo: "seleccion",
-    tema: "⚔️ Batalla Santa Rosa",
-    pregunta: "¿Quién era el presidente de Costa Rica durante la Batalla de Santa Rosa?",
-    opciones: ["Juan Santamaría", "William Walker", "Juan Rafael Mora Porras", "Óscar Arias"],
-    correcta: 2,
-    explicacion: "El presidente era Juan Rafael Mora Porras, quien envió al ejército a defender el país. 👨‍💼"
-  },
-  {
-    tipo: "vf",
-    tema: "⚔️ Batalla Santa Rosa",
-    pregunta: "Los filibusteros, liderados por William Walker, querían controlar Centroamérica y extender la esclavitud.",
-    correcta: true,
-    explicacion: "¡Correcto! Por eso era importante detenerlos en Santa Rosa. 🛡️"
-  },
-  {
-    tipo: "seleccion",
-    tema: "⚔️ Batalla Santa Rosa",
-    pregunta: "¿Cuánto duró la Batalla de Santa Rosa?",
-    opciones: ["Varios días", "Una semana", "Apenas unos minutos", "Un mes completo"],
-    correcta: 2,
-    explicacion: "¡La batalla fue muy corta, duró apenas unos minutos! 🕐"
-  },
-  {
-    tipo: "completar",
-    tema: "🏛️ Batalla de Rivas",
-    pregunta: "El héroe nacional de la Batalla de Rivas fue Juan __________.",
-    respuestas: ["santamaria", "santamaría"],
-    explicacion: "¡Juan Santamaría! Nuestro héroe nacional que quemó el mesón de guerra. 🔥"
-  },
-  {
-    tipo: "seleccion",
-    tema: "🏛️ Batalla de Rivas",
-    pregunta: "¿Cuándo se dio la Batalla de Rivas?",
-    opciones: [
-      "20 de marzo de 1856",
-      "11 de abril de 1856",
-      "15 de septiembre de 1821",
-      "1 de enero de 1900"
-    ],
-    correcta: 1,
-    explicacion: "La Batalla de Rivas fue el 11 de abril de 1856, en Rivas, Nicaragua. 🇳🇮"
-  },
-  {
-    tipo: "vf",
-    tema: "🏛️ Batalla de Rivas",
-    pregunta: "En la Batalla de Rivas, las milicias costarricenses derrotaron a William Walker al quemar el mesón de guerra.",
-    correcta: true,
-    explicacion: "¡Sí! Reafirmaron la soberanía nacional con esa gran victoria. 🎖️"
+    title:"Adjetivos Calificativos 🌈",
+    desc:"Palabras que dicen cómo es el sustantivo.",
+    icon:"🌈",
+    theory:`
+      <div class="theory">
+        <h3>🎨 ¿Qué es un adjetivo calificativo?</h3>
+        <p>Es la palabra que dice <strong>cómo es</strong> o <strong>cómo está</strong> el sustantivo. Expresa <strong>cualidades</strong> o <strong>estados</strong>.</p>
+        <div class="example">✨ La niña <strong>alegre</strong> canta. (cualidad)<br>
+        ✨ El perro está <strong>triste</strong>. (estado)<br>
+        ✨ La casa <strong>grande</strong> y <strong>blanca</strong>. (dos adjetivos)</div>
+        <p style="margin-top:8px">El adjetivo <strong>concuerda</strong> con el sustantivo en género y número: niño alto / niña alta / niños altos / niñas altas.</p>
+      </div>
+    `,
+    exercises:[
+      {q:"En 'la flor bonita', ¿cuál es el adjetivo?",opts:["la","flor","bonita"],a:2,tip:"'Bonita' dice cómo es la flor."},
+      {q:"En 'el perro grande', ¿cuál es el adjetivo?",opts:["el","perro","grande"],a:2,tip:"'Grande' describe al perro."},
+      {q:"¿Cuál de estas es un adjetivo?",opts:["correr","feliz","mesa"],a:1,tip:"Feliz describe cómo está alguien."},
+      {q:"En 'la casa blanca y grande', ¿cuántos adjetivos hay?",opts:["1","2","3"],a:1,tip:"Blanca y grande: 2 adjetivos."},
+      {q:"Adjetivo que concuerda con 'niñas':",opts:["alto","altas","altos"],a:1,tip:"Niñas = femenino plural → altas."},
+      {q:"Adjetivo que concuerda con 'niño':",opts:["alta","alto","altos"],a:1,tip:"Niño = masculino singular → alto."},
+      {q:"¿Cuál NO es un adjetivo?",opts:["azul","rápido","salta"],a:2,tip:"'Salta' es un verbo, no adjetivo."},
+      {q:"En 'el cielo está nublado', ¿cuál es el adjetivo?",opts:["cielo","está","nublado"],a:2,tip:"'Nublado' indica el estado del cielo."},
+      {q:"¿Cuál oración tiene un adjetivo?",opts:["El niño corre.","El niño es inteligente.","El niño come."],a:1,tip:"'Inteligente' es adjetivo (cualidad)."},
+      {q:"Adjetivo para describir un elefante:",opts:["enorme","correr","mesa"],a:0,tip:"Enorme indica tamaño: es adjetivo."},
+      {q:"En 'flores amarillas y frescas', ¿cuál palabra NO es adjetivo?",opts:["flores","amarillas","frescas"],a:0,tip:"'Flores' es sustantivo."},
+      {q:"Concordancia correcta:",opts:["Los gatos negro","Los gatos negros","Los gato negros"],a:1,tip:"Plural con plural: gatos negros."},
+      {q:"Concordancia correcta:",opts:["La manzana roja","La manzana rojo","La manzanas rojas"],a:0,tip:"Femenino singular con femenino singular."},
+      {q:"¿Qué adjetivo describe mejor el sol?",opts:["brillante","mesa","correr"],a:0,tip:"Brillante es cualidad del sol."},
+      {q:"En 'el libro viejo está roto', ¿cuántos adjetivos hay?",opts:["0","1","2"],a:2,tip:"Viejo y roto: 2 adjetivos."},
+    ]
   }
 ];
 
-// ============== ESTADO ==============
-let preguntaActual = 0;
-let puntos = 0;
-let aciertos = 0;
-let errores = 0;
-const PUNTOS_POR_PREGUNTA = 5;
+/* ===========================================================
+   QUIZ FINAL — 25 preguntas mezcladas de todos los temas
+   =========================================================== */
+const quizQuestions = [
+  {q:"¿Cuál es la parte final de un texto narrativo?", opts:["Introducción","Nudo","Desenlace"], a:2, topic:"Textos", tip:"El desenlace es donde se resuelve la historia."},
+  {q:"'El gato persigue al ratón en el jardín.' ¿Qué tipo de texto parece?", opts:["Narrativo","Descriptivo","Expositivo"], a:0, topic:"Textos", tip:"Narra una acción con personaje y espacio."},
+  {q:"Una descripción usa muchos…", opts:["verbos","adjetivos","números"], a:1, topic:"Textos", tip:"Los adjetivos describen cómo son las cosas."},
+  {q:"Sinónimo de 'contento':", opts:["triste","alegre","enojado"], a:1, topic:"Sinónimos", tip:"Contento = alegre = feliz."},
+  {q:"Antónimo de 'rápido':", opts:["veloz","lento","listo"], a:1, topic:"Antónimos", tip:"Rápido ↔ lento."},
+  {q:"Sinónimo de 'casa':", opts:["hogar","coche","parque"], a:0, topic:"Sinónimos", tip:"Casa = hogar."},
+  {q:"Antónimo de 'limpio':", opts:["nuevo","sucio","claro"], a:1, topic:"Antónimos", tip:"Limpio ↔ sucio."},
+  {q:"'San José' es un sustantivo…", opts:["común","propio","abstracto"], a:1, topic:"Sustantivos", tip:"Nombres de lugares específicos son propios."},
+  {q:"'Tristeza' es un sustantivo…", opts:["concreto","abstracto","colectivo"], a:1, topic:"Sustantivos", tip:"Sentimientos → abstractos."},
+  {q:"'Rebaño' es colectivo de…", opts:["peces","ovejas","abejas"], a:1, topic:"Sustantivos", tip:"Rebaño = grupo de ovejas."},
+  {q:"'Enjambre' es colectivo de…", opts:["abejas","árboles","pájaros"], a:0, topic:"Sustantivos", tip:"Enjambre = grupo de abejas."},
+  {q:"'Las niñas' es…", opts:["masculino plural","femenino plural","femenino singular"], a:1, topic:"Género/Número", tip:"'Las' indica femenino plural."},
+  {q:"Plural de 'lápiz':", opts:["lápizes","lápices","lápiz"], a:1, topic:"Género/Número", tip:"La 'z' cambia a 'c': lápices."},
+  {q:"Femenino de 'profesor':", opts:["profesores","profesora","profesor"], a:1, topic:"Género/Número", tip:"Profesor → profesora."},
+  {q:"Plural de 'flor':", opts:["flors","flores","florez"], a:1, topic:"Género/Número", tip:"flor → flores."},
+  {q:"¿Cuál es artículo indefinido?", opts:["el","una","los"], a:1, topic:"Artículos", tip:"Indefinidos: un, una, unos, unas."},
+  {q:"¿Cuál es el artículo neutro?", opts:["la","el","lo"], a:2, topic:"Artículos", tip:"El neutro es 'lo'."},
+  {q:"'Voy ___ colegio.' ¿Qué va?", opts:["a el","al","del"], a:1, topic:"Artículos", tip:"a + el = al."},
+  {q:"'La pelota ___ niño.' ¿Qué va?", opts:["de el","del","al"], a:1, topic:"Artículos", tip:"de + el = del."},
+  {q:"¿Cuál NO es artículo definido?", opts:["el","la","un"], a:2, topic:"Artículos", tip:"Un es indefinido."},
+  {q:"En 'la casa grande', ¿cuál es el adjetivo?", opts:["la","casa","grande"], a:2, topic:"Adjetivos", tip:"Grande describe a la casa."},
+  {q:"Adjetivo correcto para 'niñas':", opts:["alto","altas","altos"], a:1, topic:"Adjetivos", tip:"Femenino plural → altas."},
+  {q:"¿Cuál NO es adjetivo?", opts:["feliz","correr","azul"], a:1, topic:"Adjetivos", tip:"Correr es verbo."},
+  {q:"En 'el perro pequeño y negro', ¿cuántos adjetivos hay?", opts:["1","2","3"], a:1, topic:"Adjetivos", tip:"Pequeño y negro: 2 adjetivos."},
+  {q:"'El niño está ___.' Completa con adjetivo:", opts:["corre","cansado","mesa"], a:1, topic:"Adjetivos", tip:"Cansado indica estado: adjetivo."}
+];
 
-// ============== FUNCIONES ==============
-function iniciar(){
-  document.getElementById('intro').style.display = 'none';
-  document.getElementById('progresoWrap').classList.add('activo');
-  document.getElementById('numTotal').textContent = preguntas.length;
-  preguntaActual = 0;
-  puntos = 0;
-  aciertos = 0;
-  errores = 0;
-  mostrarPregunta();
+/* ===========================================================
+   LÓGICA DE LA APP
+   =========================================================== */
+let stars = 0;
+let currentTopic = 0;
+let topicProgress = new Array(topics.length).fill(0); // 0-100
+let topicDone = new Array(topics.length).fill(false);
+let quizAnswers = []; // {idx, selected, correct}
+
+const $ = id => document.getElementById(id);
+
+function setScore(){ $('starScore').textContent = '⭐ ' + stars; }
+function showView(id){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  $(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goHome(){
+  showView('home');
+  // Actualizar tiles con progreso
+  document.querySelectorAll('.tile').forEach((t,i)=>{
+    if(topicDone[i]) t.classList.add('done');
+  });
+}
+function nextTopic(){
+  if(currentTopic < topics.length-1){
+    openTopic(currentTopic+1);
+  } else {
+    goHome();
+  }
 }
 
-function mostrarPregunta(){
-  const cont = document.getElementById('contenedorPreguntas');
-  cont.innerHTML = '';
+/* Abrir un tema */
+function openTopic(idx){
+  currentTopic = idx;
+  const t = topics[idx];
+  $('topicTitle').textContent = t.title;
+  $('topicDesc').textContent = t.desc;
+  $('theoryBox').innerHTML = t.theory;
+  $('progressFill').style.width = '0%';
+  $('finishCard').classList.remove('show');
 
-  if(preguntaActual >= preguntas.length){
-    mostrarResultado();
-    return;
-  }
-
-  const p = preguntas[preguntaActual];
-
-  document.getElementById('numActual').textContent = preguntaActual + 1;
-  document.getElementById('puntosActuales').textContent = puntos;
-  const pct = ((preguntaActual) / preguntas.length) * 100;
-  document.getElementById('progresoFill').style.width = pct + '%';
-
-  const card = document.createElement('div');
-  card.className = 'pregunta-card activa';
-
-  let badgeClase = '';
-  let badgeTexto = '';
-  if(p.tipo === 'seleccion'){ badgeClase = ''; badgeTexto = '📝 Selección'; }
-  if(p.tipo === 'vf'){ badgeClase = 'vf'; badgeTexto = '✓✗ Verdadero o Falso'; }
-  if(p.tipo === 'completar'){ badgeClase = 'completar'; badgeTexto = '✏️ Completar'; }
-
-  let html = `
-    <div class="badge-tipo ${badgeClase}">${p.tema} · ${badgeTexto}</div>
-    <div class="pregunta-texto">${p.pregunta}</div>
-  `;
-
-  if(p.tipo === 'seleccion'){
-    html += '<div class="opciones">';
-    const letras = ['A', 'B', 'C', 'D'];
-    p.opciones.forEach((op, i) => {
-      html += `<button class="opcion" data-idx="${i}" onclick="responderSeleccion(${i})">
-        <span class="letra">${letras[i]}</span>
-        <span>${op}</span>
-      </button>`;
+  const list = $('exerciseList');
+  list.innerHTML = '';
+  t.exercises.forEach((ex, i)=>{
+    const card = document.createElement('div');
+    card.className = 'exercise';
+    card.innerHTML = `
+      <span class="ex-num">Ejercicio ${i+1} de ${t.exercises.length}</span>
+      <div class="ex-question">${ex.q}</div>
+      <div class="options" data-idx="${i}">
+        ${ex.opts.map((o,j)=>`<button class="option" data-j="${j}">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}
+      </div>
+      <div class="feedback" id="fb-${i}"></div>
+    `;
+    list.appendChild(card);
+    card.querySelectorAll('.option').forEach(btn=>{
+      btn.addEventListener('click', ()=>handleAnswer(i, parseInt(btn.dataset.j), btn, ex));
     });
-    html += '</div>';
-  }
+  });
 
-  if(p.tipo === 'vf'){
-    html += `
-      <div class="opciones">
-        <button class="opcion" data-idx="true" onclick="responderVF(true)">
-          <span class="letra">✓</span>
-          <span>Verdadero</span>
-        </button>
-        <button class="opcion" data-idx="false" onclick="responderVF(false)">
-          <span class="letra">✗</span>
-          <span>Falso</span>
-        </button>
+  showView('topicView');
+}
+
+function handleAnswer(i, j, btn, ex){
+  const opts = btn.parentElement.querySelectorAll('.option');
+  if([...opts].some(o=>o.classList.contains('disabled'))) return;
+  const fb = $('fb-'+i);
+  if(j === ex.a){
+    btn.classList.add('correct');
+    fb.className = 'feedback show ok';
+    fb.innerHTML = '✅ ¡Correcto! ' + ex.tip;
+    stars += 1;
+  } else {
+    btn.classList.add('wrong');
+    opts[ex.a].classList.add('correct');
+    fb.className = 'feedback show no';
+    fb.innerHTML = '❌ La respuesta correcta es <strong>' + String.fromCharCode(65+ex.a) + '. ' + ex.opts[ex.a] + '</strong>. ' + ex.tip;
+  }
+  opts.forEach(o=>o.classList.add('disabled'));
+  setScore();
+
+  // Progreso
+  const answered = document.querySelectorAll('#exerciseList .feedback.show').length;
+  const total = topics[currentTopic].exercises.length;
+  const pct = Math.round(answered/total*100);
+  topicProgress[currentTopic] = pct;
+  $('progressFill').style.width = pct + '%';
+
+  if(answered === total){
+    topicDone[currentTopic] = true;
+    const correct = document.querySelectorAll('#exerciseList .feedback.ok').length;
+    $('finishText').textContent = `Respondiste ${correct} de ${total} correctamente. ¡Sigue así!`;
+    $('finishCard').classList.add('show');
+  }
+}
+
+/* Botones del menú */
+document.querySelectorAll('.tile').forEach(t=>{
+  t.addEventListener('click', ()=>openTopic(parseInt(t.dataset.topic)));
+});
+
+/* ===========================================================
+   QUIZ FINAL
+   =========================================================== */
+$('startQuiz').addEventListener('click', startQuiz);
+
+function startQuiz(){
+  quizAnswers = [];
+  const c = $('quizContent');
+  c.innerHTML = `
+    <div class="quiz-intro">
+      <h2>🏆 Quiz Final</h2>
+      <p>Vamos a probar todo lo aprendido. Son <strong>${quizQuestions.length} preguntas</strong> de todos los temas.</p>
+      <ul>
+        <li>Responde cada pregunta tocando una opción.</li>
+        <li>Al final verás tu nota y podrás repasar tus errores.</li>
+        <li>¡Tranquilo! Puedes hacerlo cuantas veces quieras.</li>
+      </ul>
+      <button onclick="renderQuiz()">▶️ EMPEZAR QUIZ</button>
+    </div>
+  `;
+  showView('quizView');
+}
+
+function renderQuiz(){
+  const c = $('quizContent');
+  c.innerHTML = `
+    <div class="topic-head">
+      <h2>🏆 Quiz Final</h2>
+      <p>Responde todas las preguntas y presiona "Calificar" al final.</p>
+    </div>
+    <div id="quizList"></div>
+    <button class="check-btn" id="gradeBtn" style="margin-top:10px">📊 CALIFICAR QUIZ</button>
+  `;
+  const list = $('quizList');
+  quizQuestions.forEach((q, i)=>{
+    const card = document.createElement('div');
+    card.className = 'exercise';
+    card.innerHTML = `
+      <span class="ex-num">${i+1} / ${quizQuestions.length} · ${q.topic}</span>
+      <div class="ex-question">${q.q}</div>
+      <div class="options" data-qi="${i}">
+        ${q.opts.map((o,j)=>`<button class="option" data-j="${j}">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}
       </div>
     `;
-  }
+    list.appendChild(card);
+    card.querySelectorAll('.option').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        card.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));
+        btn.classList.add('selected');
+        quizAnswers[i] = parseInt(btn.dataset.j);
+      });
+    });
+  });
+  $('gradeBtn').addEventListener('click', gradeQuiz);
+}
 
-  if(p.tipo === 'completar'){
-    html += `
-      <input type="text" class="input-completar" id="inputResp" placeholder="Escribe tu respuesta aquí..." autocomplete="off" />
-      <br>
-      <button class="btn-comprobar" id="btnComprobar" onclick="responderCompletar()">✅ Comprobar</button>
-    `;
+function gradeQuiz(){
+  // Validar que estén todas
+  const unanswered = quizQuestions.filter((_,i)=>quizAnswers[i]===undefined).length;
+  if(unanswered>0){
+    if(!confirm(`Te faltan ${unanswered} preguntas sin responder. ¿Calificar de todos modos?`)) return;
   }
+  let correct = 0;
+  const details = quizQuestions.map((q,i)=>{
+    const sel = quizAnswers[i];
+    const ok = sel === q.a;
+    if(ok) correct++;
+    return {q,i,sel,ok};
+  });
+  const total = quizQuestions.length;
+  const pct = Math.round(correct/total*100);
+  const grade10 = (correct/total*100/10).toFixed(1);
 
-  html += `
-    <div class="feedback" id="feedback"></div>
-    <button class="btn-siguiente" id="btnSiguiente" onclick="siguiente()">Siguiente ➡️</button>
+  let emoji, msg, color;
+  if(pct >= 90){emoji='🏆'; msg='¡EXCELENTE! Dominas el tema.'; color='var(--good)';}
+  else if(pct >= 80){emoji='🌟'; msg='¡Muy bien! Estás listo.'; color='var(--good)';}
+  else if(pct >= 70){emoji='👍'; msg='Bien, pero repasa los errores.'; color='var(--blue)';}
+  else if(pct >= 60){emoji='📚'; msg='Necesitas repasar un poco más.'; color='var(--accent-2)';}
+  else {emoji='💪'; msg='¡Ánimo! Vuelve a la práctica y estudia.'; color='var(--bad)';}
+
+  const wrong = details.filter(d=>!d.ok);
+  const right = details.filter(d=>d.ok);
+
+  const rc = $('resultsContent');
+  rc.innerHTML = `
+    <div class="results">
+      <div class="mascot">${emoji}</div>
+      <div class="score-big" style="color:${color}">${grade10} / 10</div>
+      <div class="score-label">${msg}</div>
+      <div class="grade-bar"><div class="fill" style="width:${pct}%;background:${color}"></div></div>
+      <div class="stats">
+        <div class="stat"><b style="color:var(--good)">${correct}</b><small>CORRECTAS</small></div>
+        <div class="stat"><b style="color:var(--bad)">${total-correct}</b><small>INCORRECTAS</small></div>
+        <div class="stat"><b>${pct}%</b><small>ACIERTO</small></div>
+        <div class="stat"><b>${total}</b><small>PREGUNTAS</small></div>
+      </div>
+      <div class="row-btns">
+        <button class="ghost" onclick="startQuiz()">🔁 Repetir quiz</button>
+        <button class="ghost" onclick="goHome()">🏠 Menú</button>
+      </div>
+    </div>
+
+    ${wrong.length ? `
+      <div class="topic-head" style="background:#FFE8E4">
+        <h2>📝 Repaso de errores</h2>
+        <p>Revisemos las que fallaste para aprender de ellas:</p>
+      </div>
+      ${wrong.map(d=>`
+        <div class="review-item wrong">
+          <div class="q">${d.i+1}. [${d.q.topic}] ${d.q.q}</div>
+          <div class="ans yours">Tu respuesta: ${d.sel!==undefined ? String.fromCharCode(65+d.sel)+'. '+d.q.opts[d.sel] : '(sin responder)'}</div>
+          <div class="ans good">Correcta: ${String.fromCharCode(65+d.q.a)}. ${d.q.opts[d.q.a]}</div>
+          <div class="tip">💡 ${d.q.tip}</div>
+        </div>
+      `).join('')}
+    ` : `
+      <div class="topic-head" style="background:#D7F5E5">
+        <h2>🎉 ¡Sin errores!</h2>
+        <p>Respondiste todas las preguntas correctamente. ¡Estás listísimo para el examen!</p>
+      </div>
+    `}
+
+    ${right.length && wrong.length ? `
+      <details style="margin-top:14px">
+        <summary style="cursor:pointer;font-weight:800;padding:10px;background:#D7F5E5;border:2px solid var(--ink);border-radius:var(--radius-sm)">
+          ✅ Ver las ${right.length} que acertaste
+        </summary>
+        <div style="margin-top:10px">
+        ${right.map(d=>`
+          <div class="review-item ok">
+            <div class="q">${d.i+1}. [${d.q.topic}] ${d.q.q}</div>
+            <div class="ans good">Respuesta: ${String.fromCharCode(65+d.q.a)}. ${d.q.opts[d.q.a]}</div>
+          </div>
+        `).join('')}
+        </div>
+      </details>
+    ` : ''}
   `;
-
-  card.innerHTML = html;
-  cont.appendChild(card);
-
-  if(p.tipo === 'completar'){
-    setTimeout(() => {
-      const input = document.getElementById('inputResp');
-      if(input){
-        input.focus();
-        input.addEventListener('keypress', (e) => {
-          if(e.key === 'Enter') responderCompletar();
-        });
-      }
-    }, 100);
-  }
+  showView('resultsView');
 }
 
-function responderSeleccion(idx){
-  const p = preguntas[preguntaActual];
-  const botones = document.querySelectorAll('.opcion');
-  botones.forEach(b => b.disabled = true);
-
-  if(idx === p.correcta){
-    botones[idx].classList.add('correcta');
-    acierto(p.explicacion);
-  } else {
-    botones[idx].classList.add('incorrecta');
-    botones[p.correcta].classList.add('correcta');
-    error(`La respuesta correcta era: <strong>${p.opciones[p.correcta]}</strong><br>${p.explicacion}`);
-  }
-}
-
-function responderVF(valor){
-  const p = preguntas[preguntaActual];
-  const botones = document.querySelectorAll('.opcion');
-  botones.forEach(b => b.disabled = true);
-
-  const idxElegido = valor ? 0 : 1;
-  const idxCorrecto = p.correcta ? 0 : 1;
-
-  if(valor === p.correcta){
-    botones[idxElegido].classList.add('correcta');
-    acierto(p.explicacion);
-  } else {
-    botones[idxElegido].classList.add('incorrecta');
-    botones[idxCorrecto].classList.add('correcta');
-    error(`La respuesta correcta era: <strong>${p.correcta ? 'Verdadero' : 'Falso'}</strong><br>${p.explicacion}`);
-  }
-}
-
-function responderCompletar(){
-  const p = preguntas[preguntaActual];
-  const input = document.getElementById('inputResp');
-  const respUsuario = input.value.trim().toLowerCase();
-
-  if(!respUsuario){
-    input.style.borderColor = 'var(--rojo)';
-    input.focus();
-    return;
-  }
-
-  input.disabled = true;
-  document.getElementById('btnComprobar').disabled = true;
-
-  const normalizar = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
-  const respNorm = normalizar(respUsuario);
-  const acertado = p.respuestas.some(r => normalizar(r) === respNorm);
-
-  if(acertado){
-    input.style.borderColor = 'var(--verde)';
-    input.style.background = '#C8E6C9';
-    input.style.color = '#1B5E20';
-    acierto(p.explicacion);
-  } else {
-    input.style.borderColor = 'var(--rojo)';
-    input.style.background = '#FFCDD2';
-    input.style.color = '#B71C1C';
-    const correctaTexto = p.respuestas[0].charAt(0).toUpperCase() + p.respuestas[0].slice(1);
-    error(`La respuesta correcta era: <strong>${correctaTexto}</strong><br>${p.explicacion}`);
-  }
-}
-
-function acierto(explicacion){
-  puntos += PUNTOS_POR_PREGUNTA;
-  aciertos++;
-  document.getElementById('puntosActuales').textContent = puntos;
-  const fb = document.getElementById('feedback');
-  fb.className = 'feedback bien activo';
-  fb.innerHTML = `<strong>🎉 ¡Muy bien! ¡Correcto!</strong>${explicacion}`;
-  document.getElementById('btnSiguiente').classList.add('visible');
-  miniConfeti();
-}
-
-function error(mensaje){
-  errores++;
-  const fb = document.getElementById('feedback');
-  fb.className = 'feedback mal activo';
-  fb.innerHTML = `<strong>😕 ¡Casi! No te preocupes, sigue intentando.</strong>${mensaje}`;
-  document.getElementById('btnSiguiente').classList.add('visible');
-}
-
-function siguiente(){
-  preguntaActual++;
-  mostrarPregunta();
-}
-
-function mostrarResultado(){
-  document.getElementById('progresoFill').style.width = '100%';
-  document.getElementById('contenedorPreguntas').innerHTML = '';
-  const res = document.getElementById('resultado');
-  res.classList.add('activo');
-
-  const max = preguntas.length * PUNTOS_POR_PREGUNTA;
-  const pct = (puntos / max) * 100;
-
-  document.getElementById('puntajeFinal').textContent = puntos;
-  document.getElementById('puntajeMax').textContent = max;
-  document.getElementById('aciertos').textContent = aciertos;
-  document.getElementById('errores').textContent = errores;
-
-  let emoji, titulo, mensaje;
-  if(pct === 100){
-    emoji = '🏆'; titulo = '¡PERFECTO! ¡Eres un genio!';
-    mensaje = 'Respondiste TODAS las preguntas correctamente. ¡Estás más que listo/a para tu examen! 🌟';
-    granConfeti();
-  } else if(pct >= 80){
-    emoji = '🎉'; titulo = '¡Excelente trabajo!';
-    mensaje = '¡Felicidades! Tienes muy buen dominio del tema. Repasa lo que fallaste y estarás perfecto/a. 💪';
-    granConfeti();
-  } else if(pct >= 60){
-    emoji = '👍'; titulo = '¡Buen trabajo!';
-    mensaje = 'Vas por buen camino. Repasa los temas donde tuviste errores y vuelve a intentarlo. 📖';
-  } else if(pct >= 40){
-    emoji = '📚'; titulo = '¡Sigue practicando!';
-    mensaje = 'Necesitas estudiar un poquito más. ¡No te rindas! Lee de nuevo el material y vuelve a intentarlo. 💡';
-  } else {
-    emoji = '💪'; titulo = '¡Tú puedes!';
-    mensaje = 'No te desanimes. Repasa bien la materia y vuelve a intentar. ¡Cada intento te hace mejor! 🌱';
-  }
-
-  document.getElementById('emojiResultado').textContent = emoji;
-  document.getElementById('tituloResultado').textContent = titulo;
-  document.getElementById('mensajeFinal').textContent = mensaje;
-
-  document.getElementById('progresoWrap').classList.remove('activo');
-
-  res.scrollIntoView({behavior: 'smooth'});
-}
-
-function reiniciar(){
-  document.getElementById('resultado').classList.remove('activo');
-  document.getElementById('contenedorPreguntas').innerHTML = '';
-  document.getElementById('intro').style.display = 'block';
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
-
-// ============== CONFETI ==============
-function miniConfeti(){
-  const colores = ['#FFC107','#2E7D32','#1976D2','#D32F2F','#7B1FA2','#F57C00'];
-  for(let i=0; i<20; i++){
-    crearConfeti(colores[Math.floor(Math.random()*colores.length)]);
-  }
-}
-function granConfeti(){
-  const colores = ['#FFC107','#2E7D32','#1976D2','#D32F2F','#7B1FA2','#F57C00','#EC407A'];
-  for(let i=0; i<100; i++){
-    setTimeout(() => crearConfeti(colores[Math.floor(Math.random()*colores.length)]), i*30);
-  }
-}
-function crearConfeti(color){
-  const c = document.createElement('div');
-  c.className = 'confeti';
-  c.style.left = Math.random()*100 + 'vw';
-  c.style.background = color;
-  c.style.animationDuration = (Math.random()*2 + 2) + 's';
-  c.style.transform = `rotate(${Math.random()*360}deg)`;
-  if(Math.random() > 0.5){
-    c.style.borderRadius = '50%';
-  }
-  document.body.appendChild(c);
-  setTimeout(() => c.remove(), 5000);
-}
+setScore();
 </script>
 
 </body>
